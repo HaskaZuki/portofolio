@@ -1,8 +1,8 @@
 # Haska's Portfolio
 
-> Modern, responsive portfolio website showcasing my projects and skills as a Frontend Developer & Engineer
+> Modern portfolio website to showcase my projects and skills as a Frontend, Backend Developer & Engineer
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://HaskaZuki.github.io/portfolio)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://HaskaZuki.github.io/portofolio)
 [![React](https://img.shields.io/badge/React-18.2-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![Parcel](https://img.shields.io/badge/Parcel-2.7-orange?style=for-the-badge)](https://parceljs.org/)
 
@@ -82,22 +82,6 @@ portfolio/
 └── package.json
 ```
 
-## 🎨 Design System
-
-### Color Palette
-
-**Dark Mode (Cyberpunk)**:
-- Background: Pure Black `#000000`
-- Accent: Electric Cyan `#00ffcc`
-- Secondary: Magenta `#ff006e`
-- Glassmorphism with cyan glow
-
-**Light Mode (Premium Minimal)**:
-- Background: Soft White `#fafafa`
-- Accent: Charcoal `#1a1a1a`
-- Secondary: Muted Gray `#6b7280`
-- Soft shadows, refined borders
-
 ### Typography
 - Primary: System defaults (optimized for performance)
 - Monospace: For code and technical elements
@@ -115,14 +99,6 @@ Supports UI translation in:
 
 *Note: Main content remains in English for consistency*
 
-## 📱 Responsive Breakpoints
-
-- **Desktop**: > 900px (3-column grids)
-- **Tablet**: 601px - 900px (2-column grids)
-- **Mobile**: < 900px (single column, sidebar hidden)
-- **Small Mobile**: < 600px (full-width buttons, optimized spacing)
-- **Extra Small**: < 400px (minimal padding, compact UI)
-
 ## 🔧 Available Scripts
 
 | Command | Description |
@@ -138,7 +114,7 @@ Supports UI translation in:
 Advanced Discord invite tracking with giveaway integration, welcome/leave messages, and auto-roles.
 
 ### 2. TemplateBot
-Clean Discord.js v14 bot template for beginners with modular command structure.
+Clean Discord.js v14 bot template for beginners with a modular command structure.
 
 ### 3. Multipurpose Bot
 All-in-one bot with moderation, music player (DisTube), reaction roles, and admin features.
@@ -147,7 +123,6 @@ All-in-one bot with moderation, music player (DisTube), reaction roles, and admi
 
 This project is **unlicensed** - all rights reserved by Haska.
 
-<<<<<<< HEAD
 ## 👤 Author
 
 **Haska (HaskaZuki)**
@@ -155,16 +130,7 @@ This project is **unlicensed** - all rights reserved by Haska.
 - Discord: [@zuki](https://discord.com/users/710245394533318676)
 - Email: haskabussiness@gmail.com
 
-## 🙏 Acknowledgments
 
-- Built with React and modern web technologies
-- Icons by Lucide React
-- Deployed on GitHub Pages
-
-=======
->>>>>>> 92dc471263fc38ab95feb53dafe8cd354398e304
----
-
-**Live Demo**: [https://HaskaZuki.github.io/portfolio](https://HaskaZuki.github.io/portfolio)
+**Live Demo**: [https://HaskaZuki.github.io/portfolio](https://HaskaZuki.github.io/portofolio)
 
 Made with 💙 by Haska
