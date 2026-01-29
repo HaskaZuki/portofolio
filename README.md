@@ -147,6 +147,7 @@ All-in-one bot with moderation, music player (DisTube), reaction roles, and admi
 
 This project is **unlicensed** - all rights reserved by Haska.
 
+<<<<<<< HEAD
 ## 👤 Author
 
 **Haska (HaskaZuki)**
@@ -160,6 +161,8 @@ This project is **unlicensed** - all rights reserved by Haska.
 - Icons by Lucide React
 - Deployed on GitHub Pages
 
+=======
+>>>>>>> 92dc471263fc38ab95feb53dafe8cd354398e304
 ---
 
 **Live Demo**: [https://HaskaZuki.github.io/portfolio](https://HaskaZuki.github.io/portfolio)
