@@ -112,7 +112,7 @@ body {
 }
 @keyframes scanlineMove { from { background-position: 0 0; } to { background-position: 0 4px; } }
 
-   LAYOUT
+
 .dashboard-layout { display: flex; min-height: 100vh; }
 
    
