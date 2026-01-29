@@ -7,18 +7,18 @@
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://HaskaZuki.github.io/portfolio'",
+    "build-gh": "parcel build --public-url 'https://HaskaZuki.github.io/portofolio'",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HaskaZuki/portfolio.git"
+    "url": "git+https://github.com/HaskaZuki/portofolio.git"
   },
   "author": "Haska (HaskaZuki)",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/HaskaZuki/portfolio/issues"
+    "url": "https://github.com/HaskaZuki/portofolio/issues"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
