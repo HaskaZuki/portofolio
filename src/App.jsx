@@ -16,7 +16,6 @@ import Welcome from "./pages/Welcome";
 import "./styles.css";
 
 const App = () => {
-  // Check if welcome should be shown based on last visit time
   const checkShouldShowWelcome = () => {
     const lastVisit = localStorage.getItem('lastVisitTime');
     if (!lastVisit) return true; // First visit
@@ -38,7 +37,6 @@ const App = () => {
   };
 
   const handleWelcomeComplete = () => {
-    // Save current time when user enters
     localStorage.setItem('lastVisitTime', Date.now().toString());
     setShowWelcome(false);
   };
@@ -75,7 +73,6 @@ const App = () => {
   );
 };
 
-// Wrapper component to use useLocation inside Router
 const AppContent = ({ theme, toggleTheme, language, setLanguage, setShowLangMenu, showLangMenu, languages, currentLang }) => {
   const location = useLocation();
   
@@ -83,7 +80,7 @@ const AppContent = ({ theme, toggleTheme, language, setLanguage, setShowLangMenu
     <div className={`dashboard-layout fade-in theme-${theme}`}>
       <Sidebar language={language} />
       <main className="main-content">
-        {/* Header removed per user request */}
+        
         <div className="content-scrollable">
           <Routes>
             <Route path="/" element={<Home language={language} />} />
@@ -98,7 +95,7 @@ const AppContent = ({ theme, toggleTheme, language, setLanguage, setShowLangMenu
             <Route path="/docs/multipurpose" element={<DocsMulti />} />
           </Routes>
           
-          {/* Footer - Hidden on Home page */}
+          
           {location.pathname !== "/" && (
             <>
               <Footer theme={theme} toggleTheme={toggleTheme} language={language} />
@@ -106,7 +103,7 @@ const AppContent = ({ theme, toggleTheme, language, setLanguage, setShowLangMenu
             </>
           )}
           
-          {/* Advanced Language Dropdown */}
+          
           <div 
             className="language-selector"
             style={{ position: 'absolute', top: '2rem', right: '3rem', zIndex: 1000 }}

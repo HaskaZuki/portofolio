@@ -1,73 +1,40 @@
-/* =========================================
    1. RESET & CORE VARIABLES
-   ========================================= */
 :root {
-  /* Default (Dark) Theme - Enhanced Cyberpunk Aesthetic */
-  --bg-core: #000000; /* Pure Black */
-  --bg-subtle: #0d0d0d; /* Slightly lighter black */
-  --bg-sidebar: #050505; /* Deep black for sidebar */
-  --bg-card: rgba(255, 255, 255, 0.04); /* Subtle glass */
   
-  /* Vibrant Neon Accents */
-  --accent-primary: #00ffcc; /* Electric Cyan */
-  --accent-secondary: #ff00ff; /* Neon Magenta */
-  --accent-tertiary: #ffcc00; /* Electric Gold */
   
-  /* Text Colors */
   --text-header: #ffffff;
   --text-main: #e8e8e8;
   --text-muted: #777777;
   
-  /* Enhanced Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(0, 255, 204, 0.12); /* Cyan tint */
   --glass-blur: 15px;
-  --shadow-color: rgba(0, 255, 204, 0.2); /* Cyan glow */
-  --shadow-hover: rgba(0, 255, 204, 0.35); /* Stronger glow on hover */
 
-  /* Dimensions */
   --sidebar-width: 280px;
   --header-height: 100px;
-  --radius-sm: 0px; /* Boxy */
   --radius-md: 0px;
   
-  /* Typography */
   --font-main: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
-/* Light Theme - Premium Minimal Aesthetic */
 .theme-light {
-  --bg-core: #fafafa; /* Soft off-white */
-  --bg-subtle: #f0f0f0; /* Light grey */
-  --bg-sidebar: #ffffff; /* Pure white sidebar */
-  --bg-card: rgba(0, 0, 0, 0.02); /* Subtle dark glass */
   
-  /* Elegant Dark Accents */
-  --accent-primary: #1a1a1a; /* Deep charcoal */
-  --accent-secondary: #4a4a4a; /* Medium grey */
-  --accent-tertiary: #0066cc; /* Premium blue */
   
-  /* Text Colors */
   --text-header: #0a0a0a;
   --text-main: #2a2a2a;
   --text-muted: #666666;
   
-  /* Refined Glassmorphism */
   --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(0, 0, 0, 0.08); /* Soft border */
   --shadow-color: rgba(0, 0, 0, 0.08);
   --shadow-hover: rgba(0, 0, 0, 0.15);
 }
 
-/* Light Theme Specific Overrides */
 .theme-light .glass-card,
 .theme-light .glass-panel,
 .theme-light .resource-link,
 .theme-light .nav-card,
 .theme-light .footer-section {
   border-color: rgba(0,0,0,0.1);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06); /* Soft elevation */
   background: rgba(255,255,255,0.9);
 }
 
@@ -84,7 +51,6 @@
   border-right: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Global Reset & Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -95,10 +61,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* =========================================
    PREMIUM UTILITIES & ANIMATIONS
-   ========================================= */
-/* Glass Card - The "Grey Transparent Box" Standard */
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
@@ -113,7 +76,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* Glitch Text Effect */
 .glitch-text {
   position: relative;
   color: var(--text-header);
@@ -140,7 +102,6 @@ body {
   100% { clip: rect(60px, 9999px, 80px, 0); }
 }
 
-/* Scanline Overlay */
 .scanlines {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999;
   background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1));
@@ -150,14 +111,10 @@ body {
 }
 @keyframes scanlineMove { from { background-position: 0 0; } to { background-position: 0 4px; } }
 
-/* =========================================
    LAYOUT
-   ========================================= */
 .dashboard-layout { display: flex; min-height: 100vh; }
 
-/* =========================================
    2. HEADER
-   ========================================= */
 .main-header {
   position: fixed;
   top: 0;
@@ -215,14 +172,9 @@ body {
 
 .theme-divider { width: 1px; height: 15px; background: var(--glass-border); }
 
-/* =========================================
    3. SIDEBAR NAVIGATION
-   ========================================= */
-/* =========================================
    3. SIDEBAR NAVIGATION
-   ========================================= */
 .sidebar {
-  position: sticky; /* Changed from fixed to sticky for better layout integration */
   top: 0;
   width: var(--sidebar-width);
   height: 100vh;
@@ -234,7 +186,6 @@ body {
   z-index: 1000;
   box-shadow: 5px 0 20px var(--shadow-color);
   transition: background 0.3s ease, border-color 0.3s ease;
-  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .sidebar-header { margin-bottom: 3rem; text-align: center; }
@@ -258,13 +209,11 @@ body {
 }
 
 .sidebar-nav { flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start; }
-.nav-list { list-style: none; display: flex; flex-direction: column; gap: 0; /* No gap for boxy list */ }
 
 .nav-item {
   display: flex; align-items: center; gap: 1rem;
   padding: 1rem 1.2rem;
   color: var(--text-muted);
-  border-radius: var(--radius-sm); /* Boxy */
   text-decoration: none;
   transition: all 0.2s;
   font-weight: 500;
@@ -278,13 +227,11 @@ body {
   border-color: var(--accent-primary);
 }
 
-/* Submenu Styles */
 .submenu-list {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
   background: var(--bg-subtle);
-  border-left: 3px solid var(--accent-primary); /* Connected boxy look */
 }
 
 .submenu-item {
@@ -325,7 +272,6 @@ body {
   transition: all 0.2s;
   font-size: 1.2rem;
   padding: 8px;
-  border-radius: 0; /* Boxy Icons maybe? User said "kotak kotak". Let's keep icons uniform but container square? Icons usually circle. Let's make button square */
   border: 1px solid var(--glass-border);
 }
 .social-icon:hover {
@@ -334,72 +280,53 @@ body {
   background: var(--bg-subtle);
 }
 
-/* =========================================
    4. MAIN CONTENT AREA
-   ========================================= */
 .main-content {
-  /* margin-left: var(--sidebar-width); REMOVED - Using Flexbox */
-  /* width: calc(100% - var(--sidebar-width)); REMOVED - Using Flexbox */
-  flex-grow: 1; /* Take remaining space */
   min-height: 100vh;
-  /* Removed padding-top here as header handles it */
   display: flex; flex-direction: column;
   background-color: var(--bg-core);
 }
 
 .content-scrollable {
   flex-grow: 1;
-  padding: 5rem 2rem 2rem 2rem; /* Added top padding per user request ("agak kebawah") */
   width: 100%;
-  max-width: 1200px; /* Limit width for better readability */
   margin: 0 auto;
 }
 
-/* =========================================
    5. PAGE WRAPPER & DOCS SCALING
-   ========================================= */
 .page-wrapper {
   padding: 0;
   width: 100%;
 }
 
-/* Docs Specific Scaling - "Normal Aja" */
 .page-header h1 {
-  font-size: 2.5rem; /* Reduced from potential 3rem+ */
   margin-bottom: 0.5rem;
   color: var(--text-header);
 }
 .page-header p {
-  font-size: 1rem; /* Normal reading size */
   color: var(--text-muted);
   max-width: 800px;
 }
 
-/* Ensure command tables aren't massive */
 .command-table th, .command-table td {
   padding: 1rem;
-  font-size: 0.95rem; /* Normal size */
 }
 
-/* General Text Normalization */
 p, li {
   font-size: 1rem;
   line-height: 1.6;
 }
 
-/* Typography & Text */
 p { color: var(--text-muted); margin-bottom: 1.2rem; font-size: 1.05rem; }
 strong { color: var(--text-main); font-weight: 600; }
 h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.5px; }
 
-/* Buttons & CTA (Boxy Premium) */
 .cta-group { display: flex; gap: 1rem; margin-top: 2.5rem; }
 
 .btn-primary {
   background: var(--accent-primary);
   color: #000;
   padding: 1rem 2.2rem;
-  border-radius: var(--radius-sm); /* Boxy */
   text-decoration: none;
   font-weight: 700;
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -412,7 +339,6 @@ h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-top: 2.5rem; marg
 .btn-primary:hover {
   background: transparent;
   color: var(--accent-primary);
-  box-shadow: 4px 4px 0 var(--accent-primary); /* Boxy Shadow */
   transform: translate(-2px, -2px);
 }
 
@@ -421,7 +347,6 @@ h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-top: 2.5rem; marg
   border: 1px solid var(--text-muted);
   color: var(--text-main);
   padding: 1rem 2.2rem;
-  border-radius: var(--radius-sm); /* Boxy */
   text-decoration: none;
   font-weight: 600;
   display: inline-flex; align-items: center; gap: 0.5rem;
@@ -439,14 +364,12 @@ h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-top: 2.5rem; marg
 
 .btn-sm { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
 
-/* Tech Tags - Boxy */
 .tech-stack-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0 3rem 0; }
 .tech-tag {
   border: 1px solid var(--glass-border);
   color: var(--accent-primary);
   background: var(--bg-subtle);
   padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm); /* Boxy */
   font-size: 0.85rem;
   font-weight: 500;
   font-family: var(--font-mono);
@@ -456,20 +379,17 @@ h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-top: 2.5rem; marg
   background: var(--bg-core);
 }
 
-/* Cards & Glass Panels - Boxy */
 .glass-panel {
   background: var(--bg-card);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: var(--glass-border);
-  border-radius: var(--radius-md); /* Boxy */
   box-shadow: 0 4px 20px var(--shadow-color);
   transition: all 0.2s;
 }
 .glass-panel:hover {
   border-color: var(--accent-primary);
   transform: translateY(-2px);
-  box-shadow: 6px 6px 0 var(--shadow-color); /* Retro boxy shadow */
 }
 
 .bio-clean-container {
@@ -491,27 +411,19 @@ h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-top: 2.5rem; marg
   border: 1px solid var(--glass-border);
 }
 
-/* Tables */
 table { width: 100%; border-collapse: collapse; }
 th { text-align: left; padding: 1.2rem; color: var(--text-header); border-bottom: 2px solid var(--glass-border); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 td { padding: 1.2rem; color: var(--text-muted); border-bottom: 1px solid var(--glass-border); transition: background 0.2s; }
 tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
 
-/* =========================================
    5. HOME / HERO SECTION
-   ========================================= */
-/* =========================================
    5. HOME / HERO SECTION
-   ========================================= */
 .hero-section {
-  display: flex; align-items: center; justify-content: center; /* Centered */
   min-height: 70vh; position: relative;
-  text-align: center; /* Center text */
 }
 
 .content-container { 
   z-index: 2; max-width: 900px; width: 100%;
-  display: flex; flex-direction: column; align-items: center; /* Center children */
 }
 
 .intro-text {
@@ -542,7 +454,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
 }
 .typing-effect {
   color: var(--accent-primary);
-  border-right: 10px solid var(--accent-primary); /* Block cursor */
   padding-right: 5px;
   animation: blinkCursor 0.8s steps(2) infinite;
 }
@@ -554,7 +465,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   line-height: 1.6;
   max-width: 700px;
   margin-bottom: 3rem;
-  /* Removed border-left for symmetrical center alignment */
   padding-left: 0;
 }
 
@@ -563,9 +473,7 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   50% { border-color: var(--accent-primary); }
 }
 
-/* =========================================
    6. DOCS FOOTER & UTILS (SYMMETRICAL FIX)
-   ========================================= */
 .docs-footer-container {
   margin-top: 5rem;
   border-top: 1px solid var(--glass-border);
@@ -599,7 +507,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
 .nav-card.next .nav-label { justify-content: flex-end; }
 .nav-title { color: var(--text-main); font-weight: 700; font-size: 1.3rem; }
 
-/* Centered Footer Grid */
 .footer-main-heading { font-size: 2rem; text-align: center; margin-bottom: 3rem; color: var(--text-header); }
 
 .footer-grid {
@@ -607,12 +514,10 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
-  align-items: stretch; /* Stretch to fill height */
 }
 
 .footer-section {
   padding: 2rem;
-  /* Boxy grey transparent look as requested */
   background: rgba(255, 255, 255, 0.05); 
   border: 1px solid rgba(255, 255, 255, 0.1); 
   text-align: center;
@@ -628,7 +533,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
 
 .feedback-buttons { display: flex; gap: 1rem; justify-content: center; }
 .footer-links { list-style: none; padding: 0; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; } 
-/* Changed from column to row for icons */
 
 .contact-icon-btn {
   display: flex; align-items: center; justify-content: center;
@@ -649,7 +553,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   transform: translate(-2px, -2px);
 }
 
-/* Disclaimer Footer */
 .copyright-bar {
   margin-top: 4rem;
   border-top: 1px solid var(--glass-border);
@@ -660,9 +563,7 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   opacity: 0.6;
 }
 
-/* =========================================
    7. UTILS & TABLE ALIGNMENT (NEW)
-   ========================================= */
 .command-table {
   width: 100%;
   border-collapse: collapse;
@@ -680,7 +581,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   padding: 1rem;
   border-bottom: 1px solid var(--glass-border);
   color: var(--text-muted);
-  vertical-align: top; /* Align top for descriptions */
 }
 .command-table tr:last-child td { border-bottom: none; }
 .command-table tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
@@ -688,13 +588,10 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
 .col-command { width: 30%; font-family: var(--font-mono); color: var(--accent-secondary); font-weight: 600; }
 .col-desc { width: 70%; line-height: 1.6; }
 
-/* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 .fade-in { animation: fadeIn 0.4s ease forwards; }
 
-/* =========================================
    8. GLOBAL FOOTER (NEW)
-   ========================================= */
 .global-footer {
   margin-top: 5rem;
   border-top: 1px solid var(--glass-border);
@@ -732,9 +629,7 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
 .legal-links a { color: var(--text-muted); text-decoration: none; }
 .legal-links a:hover { color: var(--accent-primary); text-decoration: underline; }
 
-/* =========================================
    9. ADVANCED LANGUAGE SELECTOR
-   ========================================= */
 .language-selector {
   position: relative;
 }
@@ -835,7 +730,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   font-size: 1.1rem;
 }
 
-/* Light theme overrides for dropdown */
 .theme-light .lang-dropdown {
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
@@ -851,9 +745,7 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   color: var(--accent-primary);
 }
 
-/* =========================================
    11. DOCS LANDING PAGE
-   ========================================= */
 .docs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -978,7 +870,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   transform: translateX(4px);
 }
 
-/* Quick Start Section */
 .docs-quickstart {
   padding: 2.5rem;
   margin-bottom: 3rem;
@@ -1027,7 +918,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   line-height: 1.6;
 }
 
-/* Tech Stack Section */
 .tech-stack-section {
   margin-bottom: 2rem;
 }
@@ -1069,7 +959,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   font-weight: 500;
 }
 
-/* Light Theme Adjustments */
 .theme-light .doc-badge {
   background: rgba(102, 126, 234, 0.1);
   color: #667eea;
@@ -1090,11 +979,8 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   background: rgba(0, 0, 0, 0.04);
 }
 
-/* =========================================
    12. RESPONSIVE DESIGN - MOBILE & TABLET
-   ========================================= */
 
-/* Tablet (iPad) - 601px to 900px */
 @media (max-width: 900px) and (min-width: 601px) {
   .docs-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1109,9 +995,7 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   }
 }
 
-/* Mobile - max 900px */
 @media (max-width: 900px) {
-  /* Hide sidebar on mobile */
   .sidebar {
     width: 0;
     padding: 0;
@@ -1121,10 +1005,8 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   .main-content {
     margin-left: 0;
     padding: 1.5rem;
-    padding-top: 5rem; /* Space for language selector */
   }
   
-  /* Language selector - make it smaller and fixed */
   .language-selector {
     position: fixed !important;
     top: 1rem !important;
@@ -1142,7 +1024,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     min-width: 180px;
   }
   
-  /* Hero section */
   .hero-section {
     min-height: 70vh;
     padding: 2rem 0;
@@ -1156,7 +1037,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     font-size: 1.25rem;
   }
   
-  /* Docs grid - single column on mobile */
   .docs-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1166,7 +1046,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     padding: 1.5rem;
   }
   
-  /* Quick start - adjust spacing */
   .docs-quickstart {
     padding: 1.5rem;
   }
@@ -1177,28 +1056,23 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     font-size: 1rem;
   }
   
-  /* Tech grid */
   .tech-grid {
     grid-template-columns: 1fr;
   }
   
-  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  /* Projects grid */
   .projects-grid {
     grid-template-columns: 1fr !important;
   }
   
-  /* Contact grid */
   .contact-grid {
     grid-template-columns: 1fr !important;
   }
   
-  /* Page headers */
   .page-header h1 {
     font-size: 2rem;
   }
@@ -1207,7 +1081,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     font-size: 1rem;
   }
   
-  /* Welcome screen - mobile adjustments */
   .boot-container {
     width: 95%;
     padding: 2rem 1.5rem;
@@ -1227,7 +1100,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   }
 }
 
-/* Small Mobile - max 600px */
 @media (max-width: 600px) {
   .main-content {
     padding: 1rem;
@@ -1253,7 +1125,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     justify-content: center;
   }
   
-  /* Doc cards - smaller padding */
   .doc-card-header h3 {
     font-size: 1.25rem;
   }
@@ -1277,7 +1148,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     padding: 0.3rem 0.6rem;
   }
   
-  /* Quick start steps */
   .step-item {
     flex-direction: column;
     gap: 1rem;
@@ -1287,7 +1157,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     margin: 0 auto;
   }
   
-  /* Tech items */
   .tech-item {
     padding: 0.875rem 1rem;
     font-size: 0.9rem;
@@ -1297,7 +1166,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     font-size: 1.25rem;
   }
   
-  /* Page header */
   .page-header {
     padding: 1.5rem 0;
   }
@@ -1306,12 +1174,10 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     font-size: 1.75rem;
   }
   
-  /* Bio container */
   .bio-clean-container {
     padding: 1.25rem;
   }
   
-  /* Welcome screen */
   .boot-container {
     padding: 1.5rem 1rem;
   }
@@ -1320,9 +1186,7 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
     font-size: 1.75rem !important;
   }
   
-  /* Language dropdown */
   .lang-trigger span {
-    display: none; /* Hide "EN" text, show only flag */
   }
   
   .lang-trigger {
@@ -1331,7 +1195,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   }
 }
 
-/* Extra small devices - max 400px */
 @media (max-width: 400px) {
   .hero-section h1 {
     font-size: 1.75rem;
@@ -1357,7 +1220,6 @@ tr:hover td { background: var(--bg-subtle); color: var(--text-main); }
   }
 }
 
-/* Landscape mobile */
 @media (max-height: 600px) and (orientation: landscape) {
   .hero-section {
     min-height: auto;

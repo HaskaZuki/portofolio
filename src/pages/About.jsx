@@ -15,7 +15,7 @@ const About = () => {
       </header>
 
       <div className="about-grid">
-        {/* Bio Card */}
+        
         <div className="about-card glass-card bio-section">
           <h3>The Engineering Mindset</h3>
           <p>
@@ -29,7 +29,7 @@ const About = () => {
           </p>
         </div>
 
-        {/* Stack Cards */}
+        
         {stacks.map((stack, index) => (
           <div key={index} className="about-card glass-card">
             <h3>{stack.category}</h3>

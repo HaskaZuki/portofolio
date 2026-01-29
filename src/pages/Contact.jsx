@@ -18,7 +18,7 @@ const Contact = ({ language = "en" }) => (
     </div>
 
     <div className="contact-grid">
-      {/* Email Card */}
+      
       <div className="contact-card glass-card">
         <div className="card-icon"><Icons.Mail /></div>
         <div className="card-info">
@@ -28,7 +28,7 @@ const Contact = ({ language = "en" }) => (
         </div>
       </div>
 
-      {/* Discord Card */}
+      
       <div className="contact-card glass-card">
         <div className="card-icon"><Icons.Discord /></div>
         <div className="card-info">
@@ -38,7 +38,7 @@ const Contact = ({ language = "en" }) => (
         </div>
       </div>
 
-      {/* LinkedIn/GitHub Card */}
+      
       <div className="contact-card glass-card">
         <div className="card-icon"><Icons.GitHub /></div>
         <div className="card-info">

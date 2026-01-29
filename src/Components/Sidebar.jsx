@@ -7,7 +7,6 @@ const Sidebar = ({ language = "en" }) => {
   const location = useLocation();
   const [isDocsOpen, setIsDocsOpen] = useState(false);
 
-  // Auto-open docs dropdown jika user di halaman docs
   useEffect(() => {
     if (location.pathname.startsWith("/docs")) {
       setIsDocsOpen(true);
@@ -18,13 +17,13 @@ const Sidebar = ({ language = "en" }) => {
 
   return (
     <aside className="sidebar">
-      {/* 1. Header (Logo) */}
+      
       <div className="sidebar-header">
         <h1 className="brand-logo">HZ<span className="dot">.</span></h1>
         <p className="brand-sub">Developer</p>
       </div>
 
-      {/* 2. Navigation (Tengah - Flex Grow) */}
+      
       <nav className="sidebar-nav">
         <ul className="nav-list">
           <li>
@@ -43,7 +42,7 @@ const Sidebar = ({ language = "en" }) => {
             </Link>
           </li>
 
-          {/* Docs Dropdown */}
+          
           <li>
             <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
               <Link 
@@ -95,7 +94,7 @@ const Sidebar = ({ language = "en" }) => {
         </ul>
       </nav>
 
-      {/* 3. Footer (Bawah - Mentok) */}
+      
       <div className="sidebar-footer">
         <p className="connect-label">{t(language, "connect")}</p>
         <div className="social-dock">

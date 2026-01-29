@@ -11,7 +11,7 @@ const DocsTemplate = () => (
       </p>
     </header>
 
-    {/* INTRO */}
+    
     <div className="bio-clean-container">
       <h3 style={{ marginBottom: "1.2rem", color: "var(--accent-primary)", fontSize: "1.4rem" }}>📦 What's Inside?</h3>
       <p style={{ color: "var(--text-muted)", marginBottom: "1rem", fontSize: "1rem", lineHeight: "1.8" }}>
@@ -24,7 +24,7 @@ const DocsTemplate = () => (
       </ul>
     </div>
 
-    {/* QUICK START */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-secondary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}>⚡ How to Get Started</h2>
       
@@ -56,7 +56,7 @@ const DocsTemplate = () => (
       </div>
     </div>
 
-    {/* FOLDER STRUCTURE */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-primary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}>📂 Where things live</h2>
       <ul style={{ listStyle: "none", color: "var(--text-muted)", fontSize: "1rem", lineHeight: "2.2", fontFamily: "var(--font-mono)" }}>

@@ -5,13 +5,13 @@ const ThemeToggle = ({ isDark, toggleTheme }) => {
     <div className="theme-toggle-container fade-in">
       <div className="theme-switch" onClick={toggleTheme} title="Switch Theme">
         
-        {/* Ikon Statis di Background Switch */}
+        
         <span className="icon-sun">☀️</span>
         <span className="icon-moon">🌙</span>
 
-        {/* Bola yang bergerak (Handle) */}
+        
         <div className="switch-handle">
-          {/* Ikon di dalam bola (opsional, biar lebih keren) */}
+          
           {isDark ? 
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> 
             : 

@@ -19,9 +19,9 @@ const Docs = () => {
         </p>
       </div>
 
-      {/* Project Cards Grid */}
+      
       <div className="docs-grid">
-        {/* Invite Manager */}
+        
         <Link to="/docs/invite" className="doc-card glass-card">
           <div className="doc-card-header">
             <div className="doc-icon" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}>
@@ -47,7 +47,7 @@ const Docs = () => {
           </div>
         </Link>
 
-        {/* Template Bot */}
+        
         <Link to="/docs/template" className="doc-card glass-card">
           <div className="doc-card-header">
             <div className="doc-icon" style={{ background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" }}>
@@ -73,7 +73,7 @@ const Docs = () => {
           </div>
         </Link>
 
-        {/* Multipurpose Bot */}
+        
         <Link to="/docs/multipurpose" className="doc-card glass-card">
           <div className="doc-card-header">
             <div className="doc-icon" style={{ background: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" }}>
@@ -100,7 +100,7 @@ const Docs = () => {
         </Link>
       </div>
 
-      {/* Quick Start Section */}
+      
       <div className="docs-quickstart glass-panel">
         <h3>Quick Start Guide</h3>
         <div className="quickstart-steps">
@@ -128,7 +128,7 @@ const Docs = () => {
         </div>
       </div>
 
-      {/* Tech Stack */}
+      
       <div className="tech-stack-section">
         <h3>Technologies Used</h3>
         <div className="tech-grid">

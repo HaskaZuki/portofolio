@@ -39,7 +39,7 @@ const Footer = ({ theme, toggleTheme, language = "en" }) => {
       </div>
       
       <div className="copyright-bar">
-        {/* Theme Switcher in Footer */}
+        
         <div className="theme-switcher" style={{ marginBottom: "2rem", display: "flex", justifyContent: "center", gap: "0.5rem" }}>
           <button
             className={`theme-btn btn-sm ${theme === "light" ? "active" : ""}`}

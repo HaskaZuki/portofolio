@@ -49,10 +49,6 @@ const Header = ({ theme, toggleTheme }) => {
       <style>{`
       
 .main-header {
-  /* width: 100%; <-- JANGAN DIPAKAI (Don't use). Karena header mulai dari left: 280px (sidebar) */
-  /* Kalau width 100% ditambah left 280px, hasilnya header "tumpah" ke kanan layar (overflow). */
-  
-  /* height: var(--header-height); <-- Removed fixed height to fit larger text */
   min-height: var(--header-height);
   padding: 2rem; /* Add vertical padding for breathing room */
   display: flex; 
@@ -66,7 +62,7 @@ const Header = ({ theme, toggleTheme }) => {
 }
         .header-content {
           width: 100%;
-          /* max-width & margin auto removed to enforce flush-left alignment per user request */
+
           display: flex; 
           align-items: center;
           justify-content: space-between;

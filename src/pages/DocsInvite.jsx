@@ -11,7 +11,7 @@ const DocsInvite = () => (
       </p>
     </header>
 
-    {/* OVERVIEW */}
+    
     <div className="bio-clean-container">
       <h3 style={{ marginBottom: "1.2rem", color: "var(--accent-primary)", fontSize: "1.4rem" }}>✨ Key Features</h3>
       
@@ -44,11 +44,11 @@ const DocsInvite = () => (
       </div>
     </div>
 
-    {/* COMMANDS LIST */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-secondary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}><Icons.Stack /> Commands List</h2>
 
-      {/* General */}
+      
       <h4 style={{ color: "#27c93f", marginBottom: "0.8rem", fontSize: "1.2rem", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "0.5rem" }}>🟢 General</h4>
       <div className="table-responsive">
         <table className="command-table">
@@ -66,7 +66,7 @@ const DocsInvite = () => (
         </table>
       </div>
 
-      {/* Invites */}
+      
       <h4 style={{ color: "#79c0ff", marginBottom: "0.8rem", fontSize: "1.2rem", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "0.5rem" }}>📨 Invites</h4>
       <table className="command-table">
         <tbody>
@@ -75,7 +75,7 @@ const DocsInvite = () => (
         </tbody>
       </table>
 
-      {/* Giveaway */}
+      
       <h4 style={{ color: "#ffbd2e", marginBottom: "0.8rem", fontSize: "1.2rem", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "0.5rem" }}>🎁 Giveaway</h4>
       <table className="command-table">
         <tbody>
@@ -85,7 +85,7 @@ const DocsInvite = () => (
         </tbody>
       </table>
 
-      {/* Admin */}
+      
       <h4 style={{ color: "#ff5f56", marginBottom: "0.8rem", fontSize: "1.2rem", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: "0.5rem" }}>🛡️ Admin & Config</h4>
       <table className="command-table">
         <tbody>
@@ -97,7 +97,7 @@ const DocsInvite = () => (
       </table>
     </div>
 
-    {/* INSTALLATION */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-secondary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}>🚀 Installation & Setup</h2>
       
@@ -138,7 +138,7 @@ const DocsInvite = () => (
       </div>
     </div>
 
-    {/* SCALING */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-primary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}>📈 Scaling to Production (Sharding)</h2>
       <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem", fontSize: "1rem", lineHeight: "1.6" }}>
@@ -170,7 +170,7 @@ const DocsInvite = () => (
       </div>
     </div>
 
-    {/* TROUBLESHOOTING - Removed (Covered by Global Footer) */}
+    
 
     <DocsFooter next={{ title: "Template Bot", link: "/docs/template" }} />
   </div>

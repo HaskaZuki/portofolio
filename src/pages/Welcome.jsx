@@ -5,7 +5,6 @@ const Welcome = ({ onEnter }) => {
   const [typedText, setTypedText] = useState("");
   const fullText = "Welcome to my portfolio, Enjoy";
 
-  // Typing Effect
   useEffect(() => {
     if (bootStep === 1) {
       let index = 0;
@@ -21,7 +20,6 @@ const Welcome = ({ onEnter }) => {
     }
   }, [bootStep]);
 
-  // Boot Sequence Timer
   useEffect(() => {
     const timer1 = setTimeout(() => setBootStep(1), 500); // Start typing
     return () => clearTimeout(timer1);
@@ -30,12 +28,12 @@ const Welcome = ({ onEnter }) => {
   return (
     <div className="welcome-screen fade-in">
       <div className="boot-container glass-card">
-        {/* Step 0: Loader */}
+        
         {bootStep === 0 && (
           <div className="loader-ring"></div>
         )}
 
-        {/* Step 1: Typing Text */}
+        
         {(bootStep >= 1) && (
           <div className="boot-text-container">
              <h1 className="boot-title glitch-text" data-text="HASKA_ZUKI">Portfolio</h1>
@@ -43,7 +41,7 @@ const Welcome = ({ onEnter }) => {
           </div>
         )}
 
-        {/* Step 2: Access Granted / Enter Button */}
+        
         {bootStep >= 2 && (
           <div className="boot-actions fade-in">
             <div className="boot-bar">

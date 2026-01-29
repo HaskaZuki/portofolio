@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom"; 
 import * as Icons from "./Icons"; 
 
-// DocsFooter: Only handles Previous/Next navigation
 const DocsFooter = ({ prev, next }) => {
   if (!prev && !next) return null;
   

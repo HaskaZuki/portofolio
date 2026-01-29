@@ -11,7 +11,7 @@ const DocsMulti = () => (
       </p>
     </header>
 
-    {/* OVERVIEW */}
+    
     <div className="bio-clean-container">
       <h3 style={{ marginBottom: "1.2rem", color: "var(--accent-primary)", fontSize: "1.4rem" }}>✨ Features</h3>
       <p style={{ color: "var(--text-muted)", marginBottom: "1rem", fontSize: "1rem", lineHeight: "1.8" }}>
@@ -25,7 +25,7 @@ const DocsMulti = () => (
       </ul>
     </div>
 
-    {/* INSTALLATION */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-secondary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}>🚀 Installation & Setup</h2>
       
@@ -51,7 +51,7 @@ const DocsMulti = () => (
       </div>
     </div>
 
-    {/* ADMIN USAGE GUIDE */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-secondary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}>📖 Usage Guide: Admin Features</h2>
       
@@ -91,7 +91,7 @@ const DocsMulti = () => (
       </div>
     </div>
 
-    {/* ADDING NEW COMMANDS */}
+    
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "#ff5f56", marginBottom: "1.5rem", fontSize: "1.5rem" }}>🧑‍💻 Adding New Commands</h2>
       <ol style={{ paddingLeft: "1.5rem", color: "var(--text-muted)", fontSize: "1rem", lineHeight: "1.8", marginBottom: "1.2rem" }}>
@@ -113,7 +113,7 @@ const DocsMulti = () => (
       </div>
     </div>
 
-    {/* DATABASE MIGRATION */}
+   
     <div className="doc-section glass-panel" style={{ padding: "2.5rem", marginBottom: "2.5rem" }}>
       <h2 style={{ color: "var(--accent-primary)", marginBottom: "1.5rem", fontSize: "1.5rem" }}><Icons.Stack /> Switching to MongoDB</h2>
       <p style={{ color: "var(--text-muted)", marginBottom: "1.5rem", fontSize: "1rem", lineHeight: "1.6" }}>
@@ -139,7 +139,7 @@ const DocsMulti = () => (
       </div>
     </div>
 
-    {/* PROJECT STRUCTURE */}
+ 
     <div className="doc-section glass-panel" style={{ padding: "2.5rem" }}>
       <h2 style={{ color: "#79c0ff", marginBottom: "1.5rem", fontSize: "1.5rem" }}>📂 Project Structure</h2>
       <div className="code-block" style={{ display: "flex", flexDirection: "column", gap: "0.5rem", fontFamily: "var(--font-mono)", fontSize: "0.95rem" }}>

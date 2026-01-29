@@ -1,7 +1,5 @@
-// Translation strings for all supported languages
 export const translations = {
   en: {
-    // Sidebar
     home: "Home",
     about: "About",
     projects: "Projects",
@@ -13,7 +11,6 @@ export const translations = {
     multipurposeBot: "Multipurpose Bot",
     connect: "Connect",
     
-    // Home Page
     intro: "Frontend Developer & Engineer",
     available: "Available",
     mainHeadline: "Building Premium",
@@ -22,19 +19,15 @@ export const translations = {
     viewProjects: "View Projects",
     viewDocs: "Documentation",
     
-    // About Page
     aboutTitle: "About Me",
     aboutSubtitle: "Developer, Engineer, Documentation Writer",
     
-    // Projects Page
     projectsTitle: "Featured Projects",
     projectsSubtitle: "Production-ready bots and web applications",
     
-    // Resources Page
     resourcesTitle: "Learning Resources",
     resourcesSubtitle: "Curated guides and documentation",
     
-    // Contact Page
     contactTitle: "Contact & Inquiries",
     contactSubtitle: "Let's discuss scalable systems, bot architecture, or coffee.",
     getInTouch: "Get in Touch",
@@ -47,18 +40,15 @@ export const translations = {
     codebase: "Codebase",
     clickHere: "Click Here",
     
-    // Footer
     copyrightText: "Built with React + Parcel. All Rights Reserved.",
     privacyPolicy: "Privacy Policy",
     terms: "Terms of Service",
     
-    // Common
     previous: "Previous",
     next: "Next",
   },
   
   id: {
-    // Sidebar
     home: "Beranda",
     about: "Tentang",
     projects: "Proyek",
@@ -70,7 +60,6 @@ export const translations = {
     multipurposeBot: "Multipurpose Bot",
     connect: "Terhubung",
     
-    // Home Page
     intro: "Frontend Developer & Engineer",
     available: "Tersedia",
     mainHeadline: "Membangun Premium",
@@ -79,19 +68,15 @@ export const translations = {
     viewProjects: "Lihat Proyek",
     viewDocs: "Dokumentasi",
     
-    // About Page
     aboutTitle: "Tentang Saya",
     aboutSubtitle: "Developer, Engineer, Penulis Dokumentasi",
     
-    // Projects Page
     projectsTitle: "Proyek Unggulan",
     projectsSubtitle: "Bot dan aplikasi web siap produksi",
     
-    // Resources Page
     resourcesTitle: "Sumber Pembelajaran",
     resourcesSubtitle: "Panduan dan dokumentasi terkurasi",
     
-    // Contact Page
     contactTitle: "Kontak & Pertanyaan",
     contactSubtitle: "Mari diskusikan sistem yang skalabel, arsitektur bot, atau kopi.",
     getInTouch: "Hubungi Saya",
@@ -104,18 +89,15 @@ export const translations = {
     codebase: "Codebase",
     clickHere: "Klik Di Sini",
     
-    // Footer
     copyrightText: "Dibuat dengan React + Parcel. Hak Cipta Dilindungi.",
     privacyPolicy: "Kebijakan Privasi",
     terms: "Syarat Layanan",
     
-    // Common
     previous: "Sebelumnya",
     next: "Selanjutnya",
   },
   
   es: {
-    // Sidebar
     home: "Inicio",
     about: "Acerca de",
     projects: "Proyectos",
@@ -127,7 +109,6 @@ export const translations = {
     multipurposeBot: "Multipurpose Bot",
     connect: "Conectar",
     
-    // Home Page
     intro: "Desarrollador Frontend & Ingeniero",
     available: "Disponible",
     mainHeadline: "Construyendo Premium",
@@ -136,19 +117,15 @@ export const translations = {
     viewProjects: "Ver Proyectos",
     viewDocs: "Documentación",
     
-    // About Page
     aboutTitle: "Sobre Mí",
     aboutSubtitle: "Desarrollador, Ingeniero, Escritor de Documentación",
     
-    // Projects Page
     projectsTitle: "Proyectos Destacados",
     projectsSubtitle: "Bots y aplicaciones web listos para producción",
     
-    // Resources Page
     resourcesTitle: "Recursos de Aprendizaje",
     resourcesSubtitle: "Guías y documentación curada",
     
-    // Contact Page
     contactTitle: "Contacto y Consultas",
     contactSubtitle: "Hablemos de sistemas escalables, arquitectura de bots o café.",
     getInTouch: "Ponte en Contacto",
@@ -161,18 +138,15 @@ export const translations = {
     codebase: "Código",
     clickHere: "Haz Clic Aquí",
     
-    // Footer
     copyrightText: "Creado con React + Parcel. Todos los Derechos Reservados.",
     privacyPolicy: "Política de Privacidad",
     terms: "Términos de Servicio",
     
-    // Common
     previous: "Anterior",
     next: "Siguiente",
   },
   
   it: {
-    // Sidebar
     home: "Home",
     about: "Chi Sono",
     projects: "Progetti",
@@ -184,7 +158,6 @@ export const translations = {
     multipurposeBot: "Multipurpose Bot",
     connect: "Connetti",
     
-    // Home Page
     intro: "Frontend Developer & Ingegnere",
     available: "Disponibile",
     mainHeadline: "Costruire Premium",
@@ -193,19 +166,15 @@ export const translations = {
     viewProjects: "Vedi Progetti",
     viewDocs: "Documentazione",
     
-    // About Page
     aboutTitle: "Chi Sono",
     aboutSubtitle: "Sviluppatore, Ingegnere, Scrittore di Documentazione",
     
-    // Projects Page
     projectsTitle: "Progetti in Evidenza",
     projectsSubtitle: "Bot e applicazioni web pronti per la produzione",
     
-    // Resources Page
     resourcesTitle: "Risorse di Apprendimento",
     resourcesSubtitle: "Guide e documentazione curata",
     
-    // Contact Page
     contactTitle: "Contatto e Richieste",
     contactSubtitle: "Parliamo di sistemi scalabili, architettura bot o caffè.",
     getInTouch: "Mettiti in Contatto",
@@ -218,18 +187,15 @@ export const translations = {
     codebase: "Codice",
     clickHere: "Clicca Qui",
     
-    // Footer
     copyrightText: "Realizzato con React + Parcel. Tutti i Diritti Riservati.",
     privacyPolicy: "Politica sulla Privacy",
     terms: "Termini di Servizio",
     
-    // Common
     previous: "Precedente",
     next: "Successivo",
   },
   
   fr: {
-    // Sidebar
     home: "Accueil",
     about: "À Propos",
     projects: "Projets",
@@ -241,7 +207,6 @@ export const translations = {
     multipurposeBot: "Multipurpose Bot",
     connect: "Connecter",
     
-    // Home Page
     intro: "Développeur Frontend & Ingénieur",
     available: "Disponible",
     mainHeadline: "Construire Premium",
@@ -250,19 +215,15 @@ export const translations = {
     viewProjects: "Voir les Projets",
     viewDocs: "Documentation",
     
-    // About Page
     aboutTitle: "À Propos de Moi",
     aboutSubtitle: "Développeur, Ingénieur, Rédacteur de Documentation",
     
-    // Projects Page
     projectsTitle: "Projets en Vedette",
     projectsSubtitle: "Bots et applications web prêts pour la production",
     
-    // Resources Page
     resourcesTitle: "Ressources d'Apprentissage",
     resourcesSubtitle: "Guides et documentation sélectionnés",
     
-    // Contact Page
     contactTitle: "Contact et Demandes",
     contactSubtitle: "Parlons de systèmes évolutifs, d'architecture de bots ou de café.",
     getInTouch: "Entrer en Contact",
@@ -275,18 +236,15 @@ export const translations = {
     codebase: "Code Source",
     clickHere: "Cliquez Ici",
     
-    // Footer
     copyrightText: "Créé avec React + Parcel. Tous Droits Réservés.",
     privacyPolicy: "Politique de Confidentialité",
     terms: "Conditions d'Utilisation",
     
-    // Common
     previous: "Précédent",
     next: "Suivant",
   },
   
   cn: {
-    // Sidebar
     home: "主页",
     about: "关于",
     projects: "项目",
@@ -298,7 +256,6 @@ export const translations = {
     multipurposeBot: "多功能机器人",
     connect: "连接",
     
-    // Home Page
     intro: "前端开发者 & 工程师",
     available: "可用",
     mainHeadline: "构建优质",
@@ -307,19 +264,15 @@ export const translations = {
     viewProjects: "查看项目",
     viewDocs: "文档",
     
-    // About Page
     aboutTitle: "关于我",
     aboutSubtitle: "开发者、工程师、文档编写者",
     
-    // Projects Page
     projectsTitle: "精选项目",
     projectsSubtitle: "生产就绪的机器人和Web应用",
     
-    // Resources Page
     resourcesTitle: "学习资源",
     resourcesSubtitle: "精选指南和文档",
     
-    // Contact Page
     contactTitle: "联系与咨询",
     contactSubtitle: "让我们讨论可扩展系统、机器人架构或咖啡。",
     getInTouch: "保持联系",
@@ -332,18 +285,15 @@ export const translations = {
     codebase: "代码库",
     clickHere: "点击这里",
     
-    // Footer
     copyrightText: "使用 React + Parcel 构建。保留所有权利。",
     privacyPolicy: "隐私政策",
     terms: "服务条款",
     
-    // Common
     previous: "上一页",
     next: "下一页",
   },
   
   jp: {
-    // Sidebar
     home: "ホーム",
     about: "について",
     projects: "プロジェクト",
@@ -355,7 +305,6 @@ export const translations = {
     multipurposeBot: "多目的Bot",
     connect: "接続",
     
-    // Home Page
     intro: "フロントエンド開発者＆エンジニア",
     available: "利用可能",
     mainHeadline: "プレミアム構築",
@@ -364,19 +313,15 @@ export const translations = {
     viewProjects: "プロジェクトを見る",
     viewDocs: "ドキュメント",
     
-    // About Page
     aboutTitle: "私について",
     aboutSubtitle: "開発者、エンジニア、ドキュメントライター",
     
-    // Projects Page
     projectsTitle: "注目のプロジェクト",
     projectsSubtitle: "本番環境対応のボットとWebアプリ",
     
-    // Resources Page
     resourcesTitle: "学習リソース",
     resourcesSubtitle: "厳選されたガイドとドキュメント",
     
-    // Contact Page
     contactTitle: "お問い合わせ",
     contactSubtitle: "スケーラブルシステム、ボットアーキテクチャ、またはコーヒーについて話しましょう。",
     getInTouch: "連絡を取る",
@@ -389,18 +334,15 @@ export const translations = {
     codebase: "コードベース",
     clickHere: "ここをクリック",
     
-    // Footer
     copyrightText: "React + Parcelで構築。全著作権所有。",
     privacyPolicy: "プライバシーポリシー",
     terms: "利用規約",
     
-    // Common
     previous: "前へ",
     next: "次へ",
   },
 };
 
-// Helper function to get translation
 export const t = (lang, key) => {
   return translations[lang]?.[key] || translations.en[key] || key;
 };
