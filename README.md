@@ -151,7 +151,7 @@ This project is **unlicensed** - all rights reserved by Haska.
 
 **Haska (HaskaZuki)**
 - GitHub: [@HaskaZuki](https://github.com/HaskaZuki)
-- Discord: `710245394533318676`
+- Discord: [@zuki](https://discord.com/users/710245394533318676)
 - Email: haskabussiness@gmail.com
 
 ## 🙏 Acknowledgments
