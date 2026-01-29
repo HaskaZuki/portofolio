@@ -12,9 +12,6 @@ const Home = ({ language = "en" }) => (
           Creative Software.<br />
           <span className="typing-effect">Developer.</span>
         </h1>
-        <h2 className="sub-headline">
-          Mechanical Engineering Alumnus @ ITB building scalable frontend and backend systems, immersive game experiences, and data-driven solutions.
-        </h2>
         <div className="cta-group">
           <Link to="/about" className="btn btn-primary">{t(language, "viewProjects")}</Link>
           <Link to="/docs" className="btn btn-secondary">{t(language, "viewDocs")}</Link>

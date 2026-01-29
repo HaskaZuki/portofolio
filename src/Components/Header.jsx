@@ -50,7 +50,7 @@ const Header = ({ theme, toggleTheme }) => {
       
 .main-header {
   min-height: var(--header-height);
-  padding: 2rem; /* Add vertical padding for breathing room */
+  padding: 2rem;
   display: flex; 
   align-items: center; 
   justify-content: center;
