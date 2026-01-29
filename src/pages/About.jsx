@@ -20,7 +20,7 @@ const About = () => {
           <h3>The Engineering Mindset</h3>
           <p>
             I bridge the gap between <strong>functional engineering</strong> and <strong>digital innovation</strong>. 
-            With a rigorous background in Mechanical Engineering from <strong>ITB</strong>, I bring a structured, 
+            With a rigorous background in Mechanical Engineering, I bring a structured, 
             analytical approach to software development.
           </p>
           <p style={{ marginTop: '1rem' }}>
