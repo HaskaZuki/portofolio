@@ -65,53 +65,44 @@ const Sidebar = ({ language = "en" }) => {
 
             
             <li>
-              <Link 
-                to="/docs" 
-                className={`nav-item ${location.pathname.startsWith("/docs") ? "active" : ""}`}
-                onClick={closeMobileMenu}
-              >
-                <Icons.Book /> <span>{t(language, "documentation")}</span>
+              <div className="nav-item-wrapper">
+                <Link 
+                  to="/docs" 
+                  className={`nav-item ${location.pathname.startsWith("/docs") ? "active" : ""}`}
+                  onClick={closeMobileMenu}
+                >
+                  <Icons.Book /> <span>{t(language, "documentation")}</span>
+                </Link>
                 <button
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     setIsDocsOpen(!isDocsOpen);
                   }}
-                  className="dropdown-toggle"
+                  className="dropdown-toggle-btn"
                   aria-label="Toggle documentation submenu"
-                  style={{
-                    background: "transparent",
-                    border: "none",
-                    color: "var(--text-muted)",
-                    cursor: "pointer",
-                    padding: "0.5rem",
-                    display: "flex",
-                    alignItems: "center",
-                    marginLeft: "auto",
-                    transition: "transform 0.2s"
-                  }}
                 >
                   <Icons.ChevronDown style={{ 
                     transform: isDocsOpen ? "rotate(180deg)" : "rotate(0deg)",
                     transition: "transform 0.2s"
                   }} />
                 </button>
-              </Link>
+              </div>
 
               {isDocsOpen && (
                 <ul className="submenu">
                   <li>
-                    <Link to="/docs/invite" className={`nav-item ${isActive("/docs/invite")}`} onClick={closeMobileMenu}>
+                    <Link to="/docs/invite" className="submenu-item" onClick={closeMobileMenu}>
                       Invite Manager
                     </Link>
                   </li>
                   <li>
-                    <Link to="/docs/template" className={`nav-item ${isActive("/docs/template")}`} onClick={closeMobileMenu}>
+                    <Link to="/docs/template" className="submenu-item" onClick={closeMobileMenu}>
                       Template Bot
                     </Link>
                   </li>
                   <li>
-                    <Link to="/docs/multipurpose" className={`nav-item ${isActive("/docs/multipurpose")}`} onClick={closeMobileMenu}>
+                    <Link to="/docs/multipurpose" className="submenu-item" onClick={closeMobileMenu}>
                       Multipurpose Bot
                     </Link>
                   </li>
@@ -135,11 +126,14 @@ const Sidebar = ({ language = "en" }) => {
         
         <div className="sidebar-footer">
           <div className="social-links">
-            <a href="https://github.com/HaskaZuki" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/HaskaZuki" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Icons.GitHub />
             </a>
-            <a href="https://discord.com/users/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://discord.com/users/710245394533318676" target="_blank" rel="noopener noreferrer" className="social-icon">
               <Icons.Discord />
+            </a>
+            <a href="mailto:haskabussiness@gmail.com" className="social-icon">
+              <Icons.Mail />
             </a>
           </div>
         </div>
