@@ -71,7 +71,7 @@ const Sidebar = ({ language = "en" }) => {
                   className={`nav-item ${location.pathname.startsWith("/docs") ? "active" : ""}`}
                   onClick={closeMobileMenu}
                 >
-                  <Icons.Book /> <span>{t(language, "documentation")}</span>
+                  <Icons.Book /> <span>{t(language, "Documentation")}</span>
                 </Link>
                 <button
                   onClick={(e) => {

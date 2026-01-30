@@ -276,10 +276,21 @@ body {
   box-sizing: border-box;
 }
 
+.nav-item svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .nav-item:hover, .nav-item.active {
   color: var(--text-main);
   background: var(--bg-subtle);
   border-color: var(--accent-primary);
+}
+
+
+.nav-item-wrapper:has(.submenu) .nav-item.active {
+  border-color: transparent;
 }
 
 .nav-item-wrapper {
