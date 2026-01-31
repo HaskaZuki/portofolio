@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import * as Icons from "./components/Icons";
+import ParticleBackground from "./components/ParticleBackground";
+import PageTransition from "./components/PageTransition";
+import ScrollProgress from "./components/ScrollProgress";
+import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -78,22 +83,27 @@ const AppContent = ({ theme, toggleTheme, language, setLanguage, setShowLangMenu
   
   return (
     <div className={`dashboard-layout fade-in theme-${theme}`}>
+      <ParticleBackground theme={theme} />
+      <ScrollProgress />
+      <ScrollToTop />
       <Sidebar language={language} />
       <main className="main-content">
         
         <div className="content-scrollable">
-          <Routes>
-            <Route path="/" element={<Home language={language} />} />
-            <Route path="/about" element={<About language={language} />} />
-            <Route path="/projects" element={<Projects language={language} />} />
-            <Route path="/resources" element={<Resources language={language} />} />
-            <Route path="/contact" element={<Contact language={language} />} />
-            
-            <Route path="/docs" element={<Docs />} />
-            <Route path="/docs/invite" element={<DocsInvite />} />
-            <Route path="/docs/template" element={<DocsTemplate />} />
-            <Route path="/docs/multipurpose" element={<DocsMulti />} />
-          </Routes>
+          <PageTransition>
+            <Routes location={location}>
+              <Route path="/" element={<Home language={language} />} />
+              <Route path="/about" element={<About language={language} />} />
+              <Route path="/projects" element={<Projects language={language} />} />
+              <Route path="/resources" element={<Resources language={language} />} />
+              <Route path="/contact" element={<Contact language={language} />} />
+              
+              <Route path="/docs" element={<Docs />} />
+              <Route path="/docs/invite" element={<DocsInvite />} />
+              <Route path="/docs/template" element={<DocsTemplate />} />
+              <Route path="/docs/multipurpose" element={<DocsMulti />} />
+            </Routes>
+          </PageTransition>
           
           
           {location.pathname !== "/" && (
