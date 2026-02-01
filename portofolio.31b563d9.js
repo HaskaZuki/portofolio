@@ -69138,10 +69138,32 @@ const Projects = ()=>{
             'discord-bot': 'discord',
             'discord': 'discord',
             'bot': 'discord',
+            'discord-js': 'discord',
+            'discordjs': 'discord',
             'roblox': 'game',
             'luau': 'game',
+            'game': 'game',
+            'unity': 'game',
+            'unreal': 'game',
+            'godot': 'game',
+            'gamedev': 'game',
             'automation': 'automation',
-            'scraper': 'automation'
+            'scraper': 'automation',
+            'api': 'backend',
+            'backend': 'backend',
+            'rest-api': 'backend',
+            'graphql': 'backend',
+            'express': 'backend',
+            'nodejs': 'backend',
+            'fastapi': 'backend',
+            'django': 'backend',
+            'flask': 'backend',
+            'next': 'web',
+            'nextjs': 'web',
+            'react': 'web',
+            'vue': 'web',
+            'website': 'web',
+            'frontend': 'web'
         };
         for (const topic of topics){
             if (topicMap[topic.toLowerCase()]) return topicMap[topic.toLowerCase()];
@@ -69154,7 +69176,15 @@ const Projects = ()=>{
             'Vue': 'web',
             'React': 'web',
             'Luau': 'game',
-            'Python': 'automation'
+            'C#': 'game',
+            'Python': 'backend',
+            'Go': 'backend',
+            'Rust': 'backend',
+            'Java': 'backend',
+            'PHP': 'backend',
+            'Ruby': 'backend',
+            'C++': 'backend',
+            'C': 'backend'
         };
         return langMap[language] || 'backend';
     };
@@ -69260,25 +69290,25 @@ const Projects = ()=>{
                             children: "System Repositories"
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 148,
+                            lineNumber: 178,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "Loading open source architecture..."
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 149,
+                            lineNumber: 179,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 147,
+                    lineNumber: 177,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 146,
+                lineNumber: 176,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69296,17 +69326,17 @@ const Projects = ()=>{
                             className: "skeleton-card"
                         }, i, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 155,
+                            lineNumber: 185,
                             columnNumber: 15
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 153,
+                    lineNumber: 183,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 152,
+                lineNumber: 182,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("style", {
@@ -69338,13 +69368,13 @@ const Projects = ()=>{
         `
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 159,
+                lineNumber: 189,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/Projects.jsx",
-        lineNumber: 145,
+        lineNumber: 175,
         columnNumber: 7
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69358,14 +69388,14 @@ const Projects = ()=>{
                             children: "System Repositories"
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 193,
+                            lineNumber: 223,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                             children: "Open source architecture and bot systems."
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 194,
+                            lineNumber: 224,
                             columnNumber: 11
                         }, undefined),
                         error && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69375,7 +69405,7 @@ const Projects = ()=>{
                                     children: "\u26A0\uFE0F Failed to load from GitHub API. Showing cached data."
                                 }, void 0, false, {
                                     fileName: "src/pages/Projects.jsx",
-                                    lineNumber: 197,
+                                    lineNumber: 227,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -69384,24 +69414,24 @@ const Projects = ()=>{
                                     children: "Retry"
                                 }, void 0, false, {
                                     fileName: "src/pages/Projects.jsx",
-                                    lineNumber: 198,
+                                    lineNumber: 228,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 196,
+                            lineNumber: 226,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 192,
+                    lineNumber: 222,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 191,
+                lineNumber: 221,
                 columnNumber: 7
             }, undefined),
             featuredRepos.length > 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _animatedSection.SlideUp), {
@@ -69414,7 +69444,7 @@ const Projects = ()=>{
                             children: "Featured Projects"
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 210,
+                            lineNumber: 240,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69432,7 +69462,7 @@ const Projects = ()=>{
                                                 children: "\u2B50 Featured"
                                             }, void 0, false, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 215,
+                                                lineNumber: 245,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69441,7 +69471,7 @@ const Projects = ()=>{
                                                     children: [
                                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_icons.Repo, {}, void 0, false, {
                                                             fileName: "src/pages/Projects.jsx",
-                                                            lineNumber: 217,
+                                                            lineNumber: 247,
                                                             columnNumber: 27
                                                         }, undefined),
                                                         " ",
@@ -69449,12 +69479,12 @@ const Projects = ()=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "src/pages/Projects.jsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 247,
                                                     columnNumber: 23
                                                 }, undefined)
                                             }, void 0, false, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 216,
+                                                lineNumber: 246,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69462,7 +69492,7 @@ const Projects = ()=>{
                                                 children: repo.desc
                                             }, void 0, false, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 219,
+                                                lineNumber: 249,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69472,12 +69502,12 @@ const Projects = ()=>{
                                                         children: tag
                                                     }, tag, false, {
                                                         fileName: "src/pages/Projects.jsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 252,
                                                         columnNumber: 25
                                                     }, undefined))
                                             }, void 0, false, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 220,
+                                                lineNumber: 250,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69494,7 +69524,7 @@ const Projects = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "src/pages/Projects.jsx",
-                                                                lineNumber: 227,
+                                                                lineNumber: 257,
                                                                 columnNumber: 25
                                                             }, undefined),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -69505,13 +69535,13 @@ const Projects = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "src/pages/Projects.jsx",
-                                                                lineNumber: 228,
+                                                                lineNumber: 258,
                                                                 columnNumber: 25
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/pages/Projects.jsx",
-                                                        lineNumber: 226,
+                                                        lineNumber: 256,
                                                         columnNumber: 23
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -69519,40 +69549,40 @@ const Projects = ()=>{
                                                         children: repo.lang
                                                     }, void 0, false, {
                                                         fileName: "src/pages/Projects.jsx",
-                                                        lineNumber: 230,
+                                                        lineNumber: 260,
                                                         columnNumber: 23
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 225,
+                                                lineNumber: 255,
                                                 columnNumber: 21
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/pages/Projects.jsx",
-                                        lineNumber: 214,
+                                        lineNumber: 244,
                                         columnNumber: 19
                                     }, undefined)
                                 }, repo.name, false, {
                                     fileName: "src/pages/Projects.jsx",
-                                    lineNumber: 213,
+                                    lineNumber: 243,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 211,
+                            lineNumber: 241,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 209,
+                    lineNumber: 239,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 208,
+                lineNumber: 238,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _animatedSection.SlideUp), {
@@ -69565,17 +69595,17 @@ const Projects = ()=>{
                             children: cat.label
                         }, cat.id, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 244,
+                            lineNumber: 274,
                             columnNumber: 13
                         }, undefined))
                 }, void 0, false, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 242,
+                    lineNumber: 272,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 241,
+                lineNumber: 271,
                 columnNumber: 7
             }, undefined),
             filteredRepos.length > 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _animatedSection.StaggerContainer), {
@@ -69596,7 +69626,7 @@ const Projects = ()=>{
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(_icons.Repo, {}, void 0, false, {
                                                     fileName: "src/pages/Projects.jsx",
-                                                    lineNumber: 263,
+                                                    lineNumber: 293,
                                                     columnNumber: 25
                                                 }, undefined),
                                                 " ",
@@ -69604,12 +69634,12 @@ const Projects = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/pages/Projects.jsx",
-                                            lineNumber: 263,
+                                            lineNumber: 293,
                                             columnNumber: 21
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/pages/Projects.jsx",
-                                        lineNumber: 262,
+                                        lineNumber: 292,
                                         columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -69617,7 +69647,7 @@ const Projects = ()=>{
                                         children: repo.desc
                                     }, void 0, false, {
                                         fileName: "src/pages/Projects.jsx",
-                                        lineNumber: 265,
+                                        lineNumber: 295,
                                         columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69627,12 +69657,12 @@ const Projects = ()=>{
                                                 children: tag
                                             }, tag, false, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 268,
+                                                lineNumber: 298,
                                                 columnNumber: 23
                                             }, undefined))
                                     }, void 0, false, {
                                         fileName: "src/pages/Projects.jsx",
-                                        lineNumber: 266,
+                                        lineNumber: 296,
                                         columnNumber: 19
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -69649,7 +69679,7 @@ const Projects = ()=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/pages/Projects.jsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 303,
                                                         columnNumber: 23
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -69660,13 +69690,13 @@ const Projects = ()=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "src/pages/Projects.jsx",
-                                                        lineNumber: 274,
+                                                        lineNumber: 304,
                                                         columnNumber: 23
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 272,
+                                                lineNumber: 302,
                                                 columnNumber: 21
                                             }, undefined),
                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -69674,34 +69704,34 @@ const Projects = ()=>{
                                                 children: repo.lang
                                             }, void 0, false, {
                                                 fileName: "src/pages/Projects.jsx",
-                                                lineNumber: 276,
+                                                lineNumber: 306,
                                                 columnNumber: 21
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/pages/Projects.jsx",
-                                        lineNumber: 271,
+                                        lineNumber: 301,
                                         columnNumber: 19
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/pages/Projects.jsx",
-                                lineNumber: 261,
+                                lineNumber: 291,
                                 columnNumber: 17
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/pages/Projects.jsx",
-                            lineNumber: 260,
+                            lineNumber: 290,
                             columnNumber: 15
                         }, undefined)
                     }, repo.name, false, {
                         fileName: "src/pages/Projects.jsx",
-                        lineNumber: 259,
+                        lineNumber: 289,
                         columnNumber: 13
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 257,
+                lineNumber: 287,
                 columnNumber: 9
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "no-projects",
@@ -69709,12 +69739,12 @@ const Projects = ()=>{
                     children: "No projects found in this category."
                 }, void 0, false, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 285,
+                    lineNumber: 315,
                     columnNumber: 11
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 284,
+                lineNumber: 314,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _animatedSection.SlideUp), {
@@ -69729,29 +69759,29 @@ const Projects = ()=>{
                         children: "ACCESS ALL REPOSITORIES \u2192"
                     }, void 0, false, {
                         fileName: "src/pages/Projects.jsx",
-                        lineNumber: 291,
+                        lineNumber: 321,
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 290,
+                    lineNumber: 320,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 289,
+                lineNumber: 319,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _animatedSection.SlideUp), {
                 delay: 0.1,
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _testimonialsDefault.default), {}, void 0, false, {
                     fileName: "src/pages/Projects.jsx",
-                    lineNumber: 299,
+                    lineNumber: 329,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 298,
+                lineNumber: 328,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("style", {
@@ -69990,13 +70020,13 @@ const Projects = ()=>{
       `
             }, void 0, false, {
                 fileName: "src/pages/Projects.jsx",
-                lineNumber: 302,
+                lineNumber: 332,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/pages/Projects.jsx",
-        lineNumber: 190,
+        lineNumber: 220,
         columnNumber: 5
     }, undefined);
 };
