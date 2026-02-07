@@ -20,22 +20,6 @@
   - 🇯🇵 日本語
 ---
 
-### Core Technologies
-- **Frontend**: React 18.2, React Router v6
-- **Animations**: Framer Motion, GSAP
-- **Icons**: Lucide React
-- **Build Tool**: Parcel 2.7
-- **Deployment**: GitHub Pages
-
-### Features
-- **Real GitHub API Integration**: Live repository and stats data
-- **LocalStorage Caching**: 5-minute cache for API responses
-- **Service Worker**: PWA support with offline capabilities
-- **Error Boundaries**: Graceful error handling
-- **SEO Optimized**: Meta tags, Open Graph, structured data
-
----
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -89,15 +73,6 @@ The portfolio fetches real-time data from GitHub API:
 - Auto-categorized by language/topics
 - Star and fork counts
 - Featured projects highlighting
-
----
-
-## 📱 PWA Features
-
-- **Installable**: Add to home screen on mobile
-- **Offline Support**: Service worker caching
-- **Manifest**: Custom icons and theme colors
-- **Responsive**: Works on all devices
 
 ---
 
