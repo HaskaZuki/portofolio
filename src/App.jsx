@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer";
+import Sidebar from "./components/layout/Sidebar";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
+import CommandPalette from "./components/features/command/CommandPalette";
+import CustomCursor from "./components/common/CustomCursor";
 import * as Icons from "./components/Icons";
 import ParticleBackground from "./components/ParticleBackground";
 import PageTransition from "./components/PageTransition";
-import ScrollProgress from "./components/ScrollProgress";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollProgress from "./components/layout/ScrollProgress";
+import ScrollToTop from "./components/layout/ScrollToTop";
+import Breadcrumb from "./components/layout/Breadcrumb";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -17,6 +21,8 @@ import Docs from "./pages/Docs";
 import DocsInvite from "./pages/DocsInvite";
 import DocsTemplate from "./pages/DocsTemplate";
 import DocsMulti from "./pages/DocsMulti";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Welcome from "./pages/Welcome";
 import "./styles.css";
 
@@ -26,7 +32,7 @@ const App = () => {
     if (!lastVisit) return true; 
     
     const now = Date.now();
-    const tenMinutes = 10 * 60 * 1000; 
+    const tenMinutes = 10 * 60 * 1000;
     const timeDiff = now - parseInt(lastVisit);
     
     return timeDiff > tenMinutes; 
@@ -63,7 +69,7 @@ const App = () => {
   }
 
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <AppContent 
         theme={theme} 
         toggleTheme={toggleTheme}
@@ -81,80 +87,54 @@ const App = () => {
 const AppContent = ({ theme, toggleTheme, language, setLanguage, setShowLangMenu, showLangMenu, languages, currentLang }) => {
   const location = useLocation();
   
+  const isDocsPage = location.pathname.startsWith('/docs');
+  
   return (
     <div className={`dashboard-layout fade-in theme-${theme}`}>
       <ParticleBackground theme={theme} />
       <ScrollProgress />
       <ScrollToTop />
-      <Sidebar language={language} />
-      <main className="main-content">
-        
-        <div className="content-scrollable">
-          <PageTransition>
-            <Routes location={location}>
-              <Route path="/" element={<Home language={language} />} />
-              <Route path="/about" element={<About language={language} />} />
-              <Route path="/projects" element={<Projects language={language} />} />
-              <Route path="/resources" element={<Resources language={language} />} />
-              <Route path="/contact" element={<Contact language={language} />} />
-              
-              <Route path="/docs" element={<Docs />} />
-              <Route path="/docs/invite" element={<DocsInvite />} />
-              <Route path="/docs/template" element={<DocsTemplate />} />
-              <Route path="/docs/multipurpose" element={<DocsMulti />} />
-            </Routes>
-          </PageTransition>
-          
-          
-          {location.pathname !== "/" && (
-            <>
-              <Footer theme={theme} toggleTheme={toggleTheme} language={language} />
-              <div style={{ height: '20px' }}></div>
-            </>
-          )}
-          
-          
-          <div 
-            className="language-selector"
-            style={{ position: 'absolute', top: '2rem', right: '3rem', zIndex: 1000 }}
-          >
-            <button 
-              className="btn-secondary btn-sm lang-trigger"
-              onClick={() => setShowLangMenu(!showLangMenu)}
-            >
-              <Icons.Globe />
-              <span style={{ fontSize: '0.85rem', fontWeight: '600' }}>
-                {currentLang.flag} {currentLang.code.toUpperCase()}
-              </span>
-            </button>
+      <CommandPalette />
+      <CustomCursor />
+      
+      <Header 
+        theme={theme} 
+        toggleTheme={toggleTheme} 
+        language={language}
+        setLanguage={setLanguage}
+        languages={languages}
+        currentLang={currentLang}
+      />
+      
+      <div className="layout-container">
+        <Sidebar language={language} />
+        <main className="main-content">
+          <div className="content-scrollable">
+            <Breadcrumb />
+            <PageTransition>
+              <Routes location={location}>
+                <Route path="/" element={<Home language={language} />} />
+                <Route path="/about" element={<About language={language} />} />
+                <Route path="/projects" element={<Projects language={language} />} />
+                <Route path="/resources" element={<Resources language={language} />} />
+                <Route path="/contact" element={<Contact language={language} />} />
+                
+                <Route path="/docs" element={<Docs />} />
+                <Route path="/docs/invite" element={<DocsInvite />} />
+                <Route path="/docs/template" element={<DocsTemplate />} />
+                <Route path="/docs/multipurpose" element={<DocsMulti />} />
+                
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+
+              </Routes>
+            </PageTransition>
             
-            {showLangMenu && (
-              <>
-                <div 
-                  className="lang-dropdown-overlay"
-                  onClick={() => setShowLangMenu(false)}
-                />
-                <div className="lang-dropdown">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      className={`lang-option ${language === lang.code ? 'active' : ''}`}
-                      onClick={() => {
-                        setLanguage(lang.code);
-                        setShowLangMenu(false);
-                      }}
-                    >
-                      <span className="lang-flag">{lang.flag}</span>
-                      <span className="lang-name">{lang.name}</span>
-                      {language === lang.code && <span className="check-mark">✓</span>}
-                    </button>
-                  ))}
-                </div>
-              </>
-            )}
+            <div style={{ height: '20px' }}></div>
+            <Footer theme={theme} toggleTheme={toggleTheme} language={language} />
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 };

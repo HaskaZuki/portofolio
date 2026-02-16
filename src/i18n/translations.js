@@ -46,8 +46,37 @@ export const translations = {
     
     previous: "Previous",
     next: "Next",
+
+    skills: {
+      title: "Skills & Technologies",
+      description: "Technologies and tools I work with to build modern applications.",
+      categories: {
+        all: "All",
+        languages: "Languages",
+        frameworks: "Frameworks",
+        tools: "Tools",
+      },
+    },
+    timeline: {
+      title: "Experience",
+      description: "My journey and milestones in the tech industry.",
+      events: [
+        { title: "Full Stack Developer", description: "Building modern web applications" },
+        { title: "Open Source Contributor", description: "Contributing to various projects" },
+        { title: "Started Coding Journey", description: "Learning web development" },
+        { title: "First Project", description: "Built my first website" },
+      ],
+    },
+    testimonials: {
+      title: "Testimonials",
+      items: [
+        { quote: "Haska built an incredible Discord bot for our community of 50k+ members. The invite tracking and moderation features exceeded our expectations.", author: "Alex Rivera", role: "Community Manager" },
+        { quote: "Extremely professional and detail-oriented. Our React dashboard was delivered ahead of schedule with clean, maintainable code.", author: "Sarah Chen", role: "Startup Founder" },
+        { quote: "One of the best developers I've worked with. Great communication, quick turnaround, and the final product was polished and bug-free.", author: "Marcus Thompson", role: "Project Lead" },
+      ],
+    },
   },
-  
+
   id: {
     home: "Beranda",
     about: "Tentang",
@@ -95,8 +124,37 @@ export const translations = {
     
     previous: "Sebelumnya",
     next: "Selanjutnya",
+
+    skills: {
+      title: "Keahlian & Teknologi",
+      description: "Teknologi dan alat yang saya gunakan untuk membangun aplikasi modern.",
+      categories: {
+        all: "Semua",
+        languages: "Bahasa",
+        frameworks: "Framework",
+        tools: "Alat",
+      },
+    },
+    timeline: {
+      title: "Pengalaman",
+      description: "Perjalanan dan tonggak sejarah saya di industri teknologi.",
+      events: [
+        { title: "Full Stack Developer", description: "Membangun aplikasi web modern" },
+        { title: "Kontributor Open Source", description: "Berkontribusi ke berbagai proyek" },
+        { title: "Memulai Perjalanan Coding", description: "Belajar pengembangan web" },
+        { title: "Proyek Pertama", description: "Membangun website pertama saya" },
+      ],
+    },
+    testimonials: {
+      title: "Testimoni",
+      items: [
+        { quote: "Haska membangun bot Discord yang luar biasa untuk komunitas kami dengan 50k+ anggota. Fitur pelacakan undangan dan moderasinya melebihi ekspektasi.", author: "Alex Rivera", role: "Community Manager" },
+        { quote: "Sangat profesional dan detail. Dashboard React kami diselesaikan lebih cepat dari jadwal dengan kode yang bersih dan mudah dipelihara.", author: "Sarah Chen", role: "Startup Founder" },
+        { quote: "Salah satu developer terbaik yang pernah saya ajak kerja sama. Komunikasinya hebat, penyelesaian cepat, dan hasil akhirnya sangat rapi.", author: "Marcus Thompson", role: "Project Lead" },
+      ],
+    },
   },
-  
+
   es: {
     home: "Inicio",
     about: "Acerca de",
@@ -144,8 +202,37 @@ export const translations = {
     
     previous: "Anterior",
     next: "Siguiente",
+
+    skills: {
+      title: "Habilidades y Tecnologías",
+      description: "Tecnologías y herramientas con las que trabajo para crear aplicaciones modernas.",
+      categories: {
+        all: "Todos",
+        languages: "Lenguajes",
+        frameworks: "Frameworks",
+        tools: "Herramientas",
+      },
+    },
+    timeline: {
+      title: "Experiencia",
+      description: "Mi viaje y hitos en la industria tecnológica.",
+      events: [
+        { title: "Full Stack Developer", description: "Creando aplicaciones web modernas" },
+        { title: "Contribuidor Open Source", description: "Contribuyendo a varios proyectos" },
+        { title: "Inicio del Viaje de Programación", description: "Aprendiendo desarrollo web" },
+        { title: "Primer Proyecto", description: "Construí mi primera página web" },
+      ],
+    },
+    testimonials: {
+      title: "Testimonios",
+      items: [
+        { quote: "Haska construyó un increíble bot de Discord para nuestra comunidad de más de 50k miembros. Las funciones de seguimiento de invitaciones y moderación superaron nuestras expectativas.", author: "Alex Rivera", role: "Community Manager" },
+        { quote: "Extremadamente profesional y detallista. Nuestro panel React fue entregado antes de lo previsto con código limpio y mantenible.", author: "Sarah Chen", role: "Startup Founder" },
+        { quote: "Uno de los mejores desarrolladores con los que he trabajado. Excelente comunicación, rápida entrega, y el producto final fue impecable.", author: "Marcus Thompson", role: "Project Lead" },
+      ],
+    },
   },
-  
+
   it: {
     home: "Home",
     about: "Chi Sono",
@@ -193,8 +280,37 @@ export const translations = {
     
     previous: "Precedente",
     next: "Successivo",
+
+    skills: {
+      title: "Competenze e Tecnologie",
+      description: "Tecnologie e strumenti che utilizzo per creare applicazioni moderne.",
+      categories: {
+        all: "Tutti",
+        languages: "Linguaggi",
+        frameworks: "Framework",
+        tools: "Strumenti",
+      },
+    },
+    timeline: {
+      title: "Esperienza",
+      description: "Il mio viaggio e traguardi nell'industria tecnologica.",
+      events: [
+        { title: "Full Stack Developer", description: "Creazione di applicazioni web moderne" },
+        { title: "Contributore Open Source", description: "Contribuendo a vari progetti" },
+        { title: "Inizio del Viaggio di Coding", description: "Apprendimento dello sviluppo web" },
+        { title: "Primo Progetto", description: "Costruito il mio primo sito web" },
+      ],
+    },
+    testimonials: {
+      title: "Testimonianze",
+      items: [
+        { quote: "Haska ha costruito un bot Discord incredibile per la nostra comunità di oltre 50k membri. Le funzionalità di tracciamento inviti e moderazione hanno superato le nostre aspettative.", author: "Alex Rivera", role: "Community Manager" },
+        { quote: "Estremamente professionale e attento ai dettagli. La nostra dashboard React è stata consegnata in anticipo con codice pulito e manutenibile.", author: "Sarah Chen", role: "Startup Founder" },
+        { quote: "Uno dei migliori sviluppatori con cui ho lavorato. Ottima comunicazione, tempi rapidi, e il prodotto finale era impeccabile.", author: "Marcus Thompson", role: "Project Lead" },
+      ],
+    },
   },
-  
+
   fr: {
     home: "Accueil",
     about: "À Propos",
@@ -242,8 +358,37 @@ export const translations = {
     
     previous: "Précédent",
     next: "Suivant",
+
+    skills: {
+      title: "Compétences et Technologies",
+      description: "Technologies et outils avec lesquels je travaille pour créer des applications modernes.",
+      categories: {
+        all: "Tous",
+        languages: "Langages",
+        frameworks: "Frameworks",
+        tools: "Outils",
+      },
+    },
+    timeline: {
+      title: "Expérience",
+      description: "Mon parcours et jalons dans l'industrie technologique.",
+      events: [
+        { title: "Full Stack Developer", description: "Création d'applications web modernes" },
+        { title: "Contributeur Open Source", description: "Contribution à divers projets" },
+        { title: "Début du Voyage de Codage", description: "Apprentissage du développement web" },
+        { title: "Premier Projet", description: "Création de mon premier site web" },
+      ],
+    },
+    testimonials: {
+      title: "Témoignages",
+      items: [
+        { quote: "Haska a construit un bot Discord incroyable pour notre communauté de plus de 50k membres. Les fonctionnalités de suivi des invitations et de modération ont dépassé nos attentes.", author: "Alex Rivera", role: "Community Manager" },
+        { quote: "Extrêmement professionnel et soucieux du détail. Notre tableau de bord React a été livré en avance avec un code propre et maintenable.", author: "Sarah Chen", role: "Startup Founder" },
+        { quote: "L'un des meilleurs développeurs avec qui j'ai travaillé. Excellente communication, livraison rapide, et le produit final était impeccable.", author: "Marcus Thompson", role: "Project Lead" },
+      ],
+    },
   },
-  
+
   cn: {
     home: "主页",
     about: "关于",
@@ -291,8 +436,37 @@ export const translations = {
     
     previous: "上一页",
     next: "下一页",
+
+    skills: {
+      title: "技能与技术",
+      description: "我用来构建现代应用程序的技术和工具。",
+      categories: {
+        all: "全部",
+        languages: "语言",
+        frameworks: "框架",
+        tools: "工具",
+      },
+    },
+    timeline: {
+      title: "经验",
+      description: "我在科技行业的旅程和里程碑。",
+      events: [
+        { title: "全栈开发者", description: "构建现代网络应用程序" },
+        { title: "开源贡献者", description: "为各种项目做出贡献" },
+        { title: "开始编程之旅", description: "学习网页开发" },
+        { title: "第一个项目", description: "建立我的第一个网站" },
+      ],
+    },
+    testimonials: {
+      title: "推荐",
+      items: [
+        { quote: "Haska为我们拥有5万多成员的社区构建了一个令人难以置信的Discord机器人。邀请追踪和审核功能超出了我们的预期。", author: "Alex Rivera", role: "社区经理" },
+        { quote: "极其专业且注重细节。我们的React仪表板提前交付，代码干净且易于维护。", author: "Sarah Chen", role: "创业公司创始人" },
+        { quote: "我合作过的最好的开发者之一。沟通顺畅，交付迅速，最终产品精致且无bug。", author: "Marcus Thompson", role: "项目负责人" },
+      ],
+    },
   },
-  
+
   jp: {
     home: "ホーム",
     about: "について",
@@ -340,6 +514,35 @@ export const translations = {
     
     previous: "前へ",
     next: "次へ",
+
+    skills: {
+      title: "スキルとテクノロジー",
+      description: "モダンなアプリケーションを構築するために使用する技術とツール。",
+      categories: {
+        all: "すべて",
+        languages: "言語",
+        frameworks: "フレームワーク",
+        tools: "ツール",
+      },
+    },
+    timeline: {
+      title: "経験",
+      description: "テック業界での私の旅と節目。",
+      events: [
+        { title: "フルスタック開発者", description: "モダンなWebアプリケーションの構築" },
+        { title: "オープンソース貢献者", description: "様々なプロジェクトへの貢献" },
+        { title: "コーディングの旅の開始", description: "Web開発の学習" },
+        { title: "最初のプロジェクト", description: "初めてのウェブサイト構築" },
+      ],
+    },
+    testimonials: {
+      title: "お客様の声",
+      items: [
+        { quote: "Haskaは5万人以上のメンバーを持つコミュニティ向けに素晴らしいDiscordボットを構築してくれました。招待追跡とモデレーション機能は期待以上でした。", author: "Alex Rivera", role: "コミュニティマネージャー" },
+        { quote: "非常にプロフェッショナルで細部にこだわる方です。Reactダッシュボードは予定より早く納品され、クリーンで保守しやすいコードでした。", author: "Sarah Chen", role: "スタートアップ創業者" },
+        { quote: "一緒に仕事をした中で最高の開発者の一人です。コミュニケーションが素晴らしく、納品も迅速で、最終製品は洗練されていました。", author: "Marcus Thompson", role: "プロジェクトリーダー" },
+      ],
+    },
   },
 };
 

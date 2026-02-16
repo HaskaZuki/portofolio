@@ -1,42 +1,39 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const AnimatedSection = ({ 
   children, 
   className = '',
   delay = 0,
   direction = 'up',
-  duration = 0.6
+  duration = 0.6,
+  once = true
 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once, margin: '-50px' });
 
-  const directions = {
-    up: { y: 60, x: 0 },
-    down: { y: -60, x: 0 },
-    left: { x: 60, y: 0 },
-    right: { x: -60, y: 0 },
-    none: { x: 0, y: 0 }
+  const getInitialPosition = () => {
+    switch (direction) {
+      case 'up': return { y: 40, x: 0 };
+      case 'down': return { y: -40, x: 0 };
+      case 'left': return { x: 40, y: 0 };
+      case 'right': return { x: -40, y: 0 };
+      default: return { y: 40, x: 0 };
+    }
   };
 
-  const initial = {
-    opacity: 0,
-    ...directions[direction]
-  };
+  const initial = getInitialPosition();
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={initial}
-      animate={inView ? { opacity: 1, x: 0, y: 0 } : initial}
+      initial={{ opacity: 0, ...initial }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, ...initial }}
       transition={{
         duration,
         delay,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: [0.25, 0.1, 0.25, 1],
       }}
     >
       {children}
@@ -47,26 +44,23 @@ const AnimatedSection = ({
 export const StaggerContainer = ({ 
   children, 
   className = '',
-  staggerDelay = 0.1
+  staggerDelay = 0.1,
+  delayChildren = 0
 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   return (
     <motion.div
-      ref={ref}
       className={className}
       initial="hidden"
-      animate={inView ? "visible" : "hidden"}
+      animate="visible"
       variants={{
-        hidden: {},
+        hidden: { opacity: 0 },
         visible: {
+          opacity: 1,
           transition: {
-            staggerChildren: staggerDelay
-          }
-        }
+            staggerChildren: staggerDelay,
+            delayChildren,
+          },
+        },
       }}
     >
       {children}
@@ -76,31 +70,21 @@ export const StaggerContainer = ({
 
 export const StaggerItem = ({ 
   children, 
-  className = '',
-  direction = 'up'
+  className = ''
 }) => {
-  const directions = {
-    up: { y: 40, x: 0 },
-    down: { y: -40, x: 0 },
-    left: { x: 40, y: 0 },
-    right: { x: -40, y: 0 },
-    none: { x: 0, y: 0 }
-  };
-
   return (
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, ...directions[direction] },
+        hidden: { opacity: 0, y: 20 },
         visible: { 
           opacity: 1, 
-          x: 0, 
           y: 0,
           transition: {
             duration: 0.5,
-            ease: [0.25, 0.1, 0.25, 1]
+            ease: [0.25, 0.1, 0.25, 1],
           }
-        }
+        },
       }}
     >
       {children}
@@ -108,73 +92,29 @@ export const StaggerItem = ({
   );
 };
 
-export const FadeIn = ({ children, className = '', delay = 0 }) => (
-  <AnimatedSection className={className} delay={delay} direction="none">
-    {children}
-  </AnimatedSection>
-);
-
-export const SlideUp = ({ children, className = '', delay = 0 }) => (
-  <AnimatedSection className={className} delay={delay} direction="up">
-    {children}
-  </AnimatedSection>
-);
-
-export const SlideLeft = ({ children, className = '', delay = 0 }) => (
-  <AnimatedSection className={className} delay={delay} direction="left">
-    {children}
-  </AnimatedSection>
-);
-
-export const SlideRight = ({ children, className = '', delay = 0 }) => (
-  <AnimatedSection className={className} delay={delay} direction="right">
-    {children}
-  </AnimatedSection>
-);
-
-export const ScaleIn = ({ children, className = '', delay = 0 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+export const SlideUp = ({ 
+  children, 
+  className = '',
+  delay = 0,
+  duration = 0.6
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{
-        duration: 0.5,
+        duration,
         delay,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: [0.25, 0.1, 0.25, 1],
       }}
     >
       {children}
     </motion.div>
-  );
-};
-
-export const TextReveal = ({ children, className = '', delay = 0 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  return (
-    <div ref={ref} className={`overflow-hidden ${className}`}>
-      <motion.div
-        initial={{ y: '100%' }}
-        animate={inView ? { y: 0 } : { y: '100%' }}
-        transition={{
-          duration: 0.6,
-          delay,
-          ease: [0.25, 0.1, 0.25, 1]
-        }}
-      >
-        {children}
-      </motion.div>
-    </div>
   );
 };
 

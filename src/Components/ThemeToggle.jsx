@@ -1,24 +1,45 @@
-import React from "react";
+import React from 'react';
+import { Sun, Moon, Monitor } from 'lucide-react';
 
-const ThemeToggle = ({ isDark, toggleTheme }) => {
+const ThemeToggle = ({ theme, toggleTheme }) => {
+  const themes = [
+    { id: 'light', icon: <Sun size={16} />, label: 'Light' },
+    { id: 'dark', icon: <Moon size={16} />, label: 'Dark' },
+    { id: 'system', icon: <Monitor size={16} />, label: 'System' },
+  ];
+
   return (
-    <div className="theme-toggle-container fade-in">
-      <div className="theme-switch" onClick={toggleTheme} title="Switch Theme">
-        
-        
-        <span className="icon-sun">☀️</span>
-        <span className="icon-moon">🌙</span>
-
-        
-        <div className="switch-handle">
-          
-          {isDark ? 
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> 
-            : 
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-          }
-        </div>
-      </div>
+    <div className="theme-toggle" style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.25rem',
+      padding: '0.25rem',
+      background: 'var(--bg-subtle)',
+      borderRadius: '6px',
+      border: '1px solid var(--border-subtle)',
+    }}>
+      {themes.map((t) => (
+        <button
+          key={t.id}
+          onClick={() => toggleTheme(t.id)}
+          className={`theme-btn ${theme === t.id ? 'active' : ''}`}
+          title={t.label}
+          style={{
+            padding: '0.375rem',
+            borderRadius: '4px',
+            border: 'none',
+            background: theme === t.id ? 'var(--bg-elevated)' : 'transparent',
+            color: theme === t.id ? 'var(--accent-primary)' : 'var(--text-secondary)',
+            cursor: 'pointer',
+            transition: 'all 0.2s',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          {t.icon}
+        </button>
+      ))}
     </div>
   );
 };

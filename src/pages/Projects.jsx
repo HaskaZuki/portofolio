@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import * as Icons from "../components/Icons";
 import { SlideUp, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
-import TiltCard from "../components/TiltCard";
 import Testimonials from "../components/Testimonials";
 
 const CACHE_KEY = 'github_projects_cache';
 const CACHE_DURATION = 5 * 60 * 1000;
 
-const Projects = () => {
+const Projects = ({ language = 'en' }) => {
   const [filter, setFilter] = useState('all');
   const [repositories, setRepositories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -144,7 +143,6 @@ const Projects = () => {
     } catch (err) {
       console.error('Error fetching repositories:', err);
       setError(err.message);
-      
       setRepositories([]);
     } finally {
       setLoading(false);
@@ -175,8 +173,8 @@ const Projects = () => {
       <div className="page-wrapper">
         <SlideUp>
           <header className="page-header">
-            <h1>System Repositories</h1>
-            <p>Loading open source architecture...</p>
+            <h1>Projects</h1>
+            <p>Loading repositories...</p>
           </header>
         </SlideUp>
         <div className="projects-skeleton">
@@ -192,24 +190,19 @@ const Projects = () => {
           }
           .skeleton-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 1.5rem;
           }
           .skeleton-card {
             height: 200px;
-            background: linear-gradient(
-              90deg,
-              rgba(255, 255, 255, 0.03) 25%,
-              rgba(255, 255, 255, 0.06) 50%,
-              rgba(255, 255, 255, 0.03) 75%
-            );
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
+            background: var(--bg-subtle);
+            border: 1px solid var(--glass-border);
             border-radius: 8px;
+            animation: pulse 1.5s infinite;
           }
-          @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
           }
         `}</style>
       </div>
@@ -220,11 +213,11 @@ const Projects = () => {
     <div className="page-wrapper">
       <SlideUp>
         <header className="page-header">
-          <h1>System Repositories</h1>
-          <p>Open source architecture and bot systems.</p>
+          <h1>Projects</h1>
+          <p>Open source repositories and applications.</p>
           {error && (
             <div className="error-banner">
-              <span>⚠️ Failed to load from GitHub API. Showing cached data.</span>
+              <span>Failed to load from GitHub API. Showing cached data.</span>
               <button onClick={fetchRepositories} className="retry-btn">
                 Retry
               </button>
@@ -233,41 +226,45 @@ const Projects = () => {
         </header>
       </SlideUp>
 
-      {/* Featured Projects */}
       {featuredRepos.length > 0 && (
         <SlideUp delay={0.1}>
           <div className="featured-section">
-            <h3 className="section-subtitle">Featured Projects</h3>
+            <h3 className="section-subtitle">Featured</h3>
             <div className="featured-projects-grid">
               {featuredRepos.map((repo) => (
-                <TiltCard key={repo.name} tiltAmount={8}>
-                  <a href={repo.url} target="_blank" rel="noopener noreferrer" className="featured-project-card glass-card">
-                    <div className="featured-badge">⭐ Featured</div>
-                    <div className="card-header">
-                      <h3><Icons.Repo /> {repo.name}</h3>
+                <a 
+                  key={repo.name} 
+                  href={repo.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="featured-project-card glass-card"
+                >
+                  <div className="featured-badge">Featured</div>
+                  <div className="card-header">
+                    <h3 title={repo.name}><Icons.GitHub /> {repo.name}</h3>
+                  </div>
+                  <p className="card-desc" title={repo.desc}>
+                    {repo.desc.length > 120 ? repo.desc.substring(0, 120) + '...' : repo.desc}
+                  </p>
+                  <div className="project-tags">
+                    {repo.tags.map(tag => (
+                      <span key={tag} className="project-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <div className="card-footer">
+                    <div className="repo-stats">
+                      <span className="stat">⭐ {repo.stars}</span>
+                      <span className="stat">🍴 {repo.forks}</span>
                     </div>
-                    <p className="card-desc">{repo.desc}</p>
-                    <div className="project-tags">
-                      {repo.tags.map(tag => (
-                        <span key={tag} className="project-tag">{tag}</span>
-                      ))}
-                    </div>
-                    <div className="card-footer">
-                      <div className="repo-stats">
-                        <span className="stat">⭐ {repo.stars}</span>
-                        <span className="stat">🍴 {repo.forks}</span>
-                      </div>
-                      <span className="lang-badge">{repo.lang}</span>
-                    </div>
-                  </a>
-                </TiltCard>
+                    <span className="lang-badge">{repo.lang}</span>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
         </SlideUp>
       )}
 
-      {/* Filter Tabs */}
       <SlideUp delay={0.15}>
         <div className="filter-tabs">
           {categories.map((cat) => (
@@ -282,31 +279,35 @@ const Projects = () => {
         </div>
       </SlideUp>
 
-      {/* Projects Grid */}
       {filteredRepos.length > 0 ? (
         <StaggerContainer className="projects-grid" staggerDelay={0.08}>
           {filteredRepos.map((repo) => (
             <StaggerItem key={repo.name}>
-              <TiltCard tiltAmount={5}>
-                <a href={repo.url} target="_blank" rel="noopener noreferrer" className="project-card glass-card">
-                  <div className="card-header">
-                    <h3><Icons.Repo /> {repo.name}</h3>
+              <a 
+                href={repo.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="project-card glass-card"
+              >
+                <div className="card-header">
+                  <h3 title={repo.name}><Icons.GitHub /> {repo.name}</h3>
+                </div>
+                <p className="card-desc" title={repo.desc}>
+                  {repo.desc.length > 120 ? repo.desc.substring(0, 120) + '...' : repo.desc}
+                </p>
+                <div className="project-tags">
+                  {repo.tags.slice(0, 3).map(tag => (
+                    <span key={tag} className="project-tag">{tag}</span>
+                  ))}
+                </div>
+                <div className="card-footer">
+                  <div className="repo-stats">
+                    <span className="stat">⭐ {repo.stars}</span>
+                    <span className="stat">🍴 {repo.forks}</span>
                   </div>
-                  <p className="card-desc">{repo.desc}</p>
-                  <div className="project-tags">
-                    {repo.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className="project-tag">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="card-footer">
-                    <div className="repo-stats">
-                      <span className="stat">⭐ {repo.stars}</span>
-                      <span className="stat">🍴 {repo.forks}</span>
-                    </div>
-                    <span className="lang-badge">{repo.lang}</span>
-                  </div>
-                </a>
-              </TiltCard>
+                  <span className="lang-badge">{repo.lang}</span>
+                </div>
+              </a>
             </StaggerItem>
           ))}
         </StaggerContainer>
@@ -318,15 +319,19 @@ const Projects = () => {
       
       <SlideUp delay={0.2}>
         <div className="more-projects">
-          <a href={`https://github.com/${username}?tab=repositories`} target="_blank" rel="noopener noreferrer" className="btn-secondary">
-            ACCESS ALL REPOSITORIES →
+          <a 
+            href={`https://github.com/${username}?tab=repositories`} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-secondary"
+          >
+            View All Repositories →
           </a>
         </div>
       </SlideUp>
 
-      {/* Testimonials Section */}
       <SlideUp delay={0.1}>
-        <Testimonials />
+        <Testimonials language={language} />
       </SlideUp>
 
       <style>{`
@@ -352,6 +357,7 @@ const Projects = () => {
           cursor: pointer;
           font-size: 0.85rem;
           transition: all 0.2s;
+          border-radius: 4px;
         }
 
         .retry-btn:hover {
@@ -369,17 +375,17 @@ const Projects = () => {
         }
 
         .section-subtitle {
-          font-family: var(--font-mono);
           font-size: 1rem;
           color: var(--accent-primary);
           margin-bottom: 1.5rem;
           text-transform: uppercase;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
+          font-weight: 600;
         }
 
         .featured-projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
           gap: 1.5rem;
           margin-bottom: 3rem;
         }
@@ -390,21 +396,24 @@ const Projects = () => {
           display: flex;
           flex-direction: column;
           height: 100%;
+          min-height: 260px;
           padding: 1.5rem;
           border: 1px solid var(--accent-primary);
-          background: rgba(0, 255, 204, 0.02);
+          background: var(--bg-card);
+          overflow: hidden;
         }
 
         .featured-badge {
           position: absolute;
-          top: -1px;
-          right: -1px;
+          top: 0;
+          right: 0;
           background: var(--accent-primary);
-          color: #000;
+          color: white;
           font-size: 0.7rem;
           padding: 0.3rem 0.8rem;
           font-weight: 600;
           text-transform: uppercase;
+          border-bottom-left-radius: 8px;
         }
 
         .filter-tabs {
@@ -423,20 +432,22 @@ const Projects = () => {
           cursor: pointer;
           transition: all 0.3s;
           font-family: var(--font-main);
+          border-radius: 6px;
         }
 
         .filter-tab:hover,
         .filter-tab.active {
           border-color: var(--accent-primary);
           color: var(--accent-primary);
-          background: rgba(0, 255, 204, 0.05);
+          background: var(--bg-subtle);
         }
 
         .projects-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 1.5rem;
           margin-top: 0;
+          align-items: stretch;
         }
 
         .project-card {
@@ -444,8 +455,11 @@ const Projects = () => {
           display: flex;
           flex-direction: column;
           height: 100%;
-          padding: 1.5rem;
+          min-height: 240px;
+          padding: 1.25rem;
           transition: all 0.3s;
+          overflow: hidden;
+          background: var(--bg-card);
         }
 
         .project-card:hover {
@@ -460,19 +474,25 @@ const Projects = () => {
           display: flex;
           align-items: center;
           gap: 0.8rem;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           color: var(--text-header);
           margin-bottom: 1rem;
-          font-family: var(--font-mono);
-          letter-spacing: -0.5px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
 
         .card-desc {
           color: var(--text-muted);
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           line-height: 1.6;
           margin-bottom: 1rem;
           flex-grow: 1;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .project-tags {
@@ -485,9 +505,10 @@ const Projects = () => {
         .project-tag {
           font-size: 0.7rem;
           padding: 0.25rem 0.5rem;
-          background: rgba(255, 255, 255, 0.05);
+          background: var(--bg-subtle);
           color: var(--text-muted);
           border: 1px solid var(--glass-border);
+          border-radius: 4px;
         }
 
         .card-footer {
@@ -510,35 +531,33 @@ const Projects = () => {
         }
 
         .lang-badge {
-          color: var(--accent-secondary);
+          color: var(--accent-primary);
           font-family: var(--font-mono);
           font-size: 0.8rem;
-          font-weight: 700;
+          font-weight: 600;
         }
 
         .more-projects {
-          margin-top: 4rem;
+          margin-top: 3rem;
           text-align: center;
         }
 
         .btn-secondary {
           display: inline-block;
-          padding: 1rem 2rem;
+          padding: 0.75rem 1.5rem;
           border: 1px solid var(--glass-border);
           color: var(--text-muted);
           text-decoration: none;
-          font-family: var(--font-mono);
           font-size: 0.9rem;
           transition: all 0.3s;
-          text-transform: uppercase;
-          letter-spacing: 1px;
+          border-radius: 6px;
+          background: var(--bg-subtle);
         }
 
         .btn-secondary:hover {
           color: var(--accent-primary);
           border-color: var(--accent-primary);
-          background: rgba(0, 255, 204, 0.05);
-          transform: translateY(-2px);
+          background: var(--bg-core);
         }
 
         @media (max-width: 768px) {

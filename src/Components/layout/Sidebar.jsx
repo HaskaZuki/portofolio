@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import * as Icons from "./Icons";
-import { t } from "../i18n/translations";
+import * as Icons from "../Icons";
+import { t } from "../../i18n/translations";
+
+
 
 const Sidebar = ({ language = "en" }) => {
   const location = useLocation();
   const [isDocsOpen, setIsDocsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
     if (location.pathname.startsWith("/docs")) {
@@ -28,7 +29,8 @@ const Sidebar = ({ language = "en" }) => {
   const navItems = [
     { path: "/", icon: Icons.Home, label: t(language, "home") },
     { path: "/about", icon: Icons.User, label: t(language, "about") },
-    { path: "/projects", icon: Icons.GitHub, label: t(language, "projects") },
+    { path: "/projects",      icon: Icons.GitHub, label: t(language, "projects") },
+    { path: "/blog", icon: Icons.FileText, label: "Blog" },
     { path: "/resources", icon: Icons.Stack, label: t(language, "resources") },
     { path: "/contact", icon: Icons.Mail, label: t(language, "contact") },
   ];
@@ -55,27 +57,7 @@ const Sidebar = ({ language = "en" }) => {
       </motion.button>
 
       <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-        {/* Logo Section */}
-        <div className="sidebar-header">
-          <Link to="/" className="logo-link">
-            <div className="logo-container">
-              <span className="logo-bracket">&lt;</span>
-              <span className="logo-text">HZ</span>
-              <span className="logo-bracket">/&gt;</span>
-            </div>
-            <div className="logo-underline">
-              <motion.div 
-                className="logo-line"
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-              />
-            </div>
-          </Link>
-          <p className="brand-tagline">Full Stack Developer</p>
-        </div>
 
-        {/* Navigation */}
         <nav className="sidebar-nav">
           <ul className="nav-list">
             {navItems.map((item, index) => (
@@ -84,21 +66,13 @@ const Sidebar = ({ language = "en" }) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                onMouseEnter={() => setHoveredItem(item.path)}
-                onMouseLeave={() => setHoveredItem(null)}
               >
                 <Link 
                   to={item.path} 
                   className={`nav-item ${isActive(item.path) ? "active" : ""}`}
                   onClick={closeMobileMenu}
                 >
-                  <motion.div 
-                    className="nav-icon-wrapper"
-                    animate={{ 
-                      scale: hoveredItem === item.path || isActive(item.path) ? 1.1 : 1,
-                      rotate: hoveredItem === item.path ? 5 : 0
-                    }}
-                  >
+                  <motion.div className="nav-icon-wrapper">
                     <item.icon />
                   </motion.div>
                   <span className="nav-label">{item.label}</span>
@@ -113,7 +87,6 @@ const Sidebar = ({ language = "en" }) => {
               </motion.li>
             ))}
 
-            {/* Documentation with Dropdown */}
             <motion.li
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -126,7 +99,7 @@ const Sidebar = ({ language = "en" }) => {
                 <motion.div className="nav-icon-wrapper">
                   <Icons.Book />
                 </motion.div>
-                <span className="nav-label">{t(language, "Documentation")}</span>
+                <span className="nav-label">{t(language, "docs")}</span>
                 <motion.div 
                   className="dropdown-arrow"
                   animate={{ rotate: isDocsOpen ? 180 : 0 }}
@@ -162,7 +135,6 @@ const Sidebar = ({ language = "en" }) => {
                           className={`submenu-item ${location.pathname === doc.path ? "active" : ""}`}
                           onClick={closeMobileMenu}
                         >
-                          <span className="submenu-dot">•</span>
                           {doc.label}
                         </Link>
                       </motion.li>
@@ -174,7 +146,6 @@ const Sidebar = ({ language = "en" }) => {
           </ul>
         </nav>
 
-        {/* Social Links */}
         <div className="sidebar-footer">
           <div className="social-links">
             <motion.a 
@@ -182,8 +153,9 @@ const Sidebar = ({ language = "en" }) => {
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="GitHub"
             >
               <Icons.GitHub />
             </motion.a>
@@ -192,16 +164,18 @@ const Sidebar = ({ language = "en" }) => {
               target="_blank" 
               rel="noopener noreferrer" 
               className="social-icon"
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="Discord"
             >
               <Icons.Discord />
             </motion.a>
             <motion.a 
               href="mailto:haskabussiness@gmail.com" 
               className="social-icon"
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
+              aria-label="Email"
             >
               <Icons.Mail />
             </motion.a>
@@ -212,72 +186,17 @@ const Sidebar = ({ language = "en" }) => {
 
       <style>{`
         .sidebar {
-          position: sticky;
-          top: 0;
+          position: fixed;
+          top: var(--header-height);
+          left: 0;
           width: 260px;
-          height: 100vh;
-          background: linear-gradient(180deg, var(--bg-sidebar) 0%, rgba(0,0,0,0.95) 100%);
+          height: calc(100vh - var(--header-height));
+          background: var(--bg-sidebar);
           border-right: 1px solid var(--glass-border);
           padding: 2rem 1.5rem;
           display: flex;
           flex-direction: column;
           z-index: 1000;
-          box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .sidebar-header {
-          margin-bottom: 2.5rem;
-          padding-bottom: 1.5rem;
-          border-bottom: 1px solid var(--glass-border);
-        }
-
-        .logo-link {
-          text-decoration: none;
-          display: inline-block;
-        }
-
-        .logo-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.25rem;
-          font-family: var(--font-mono);
-          font-size: 2rem;
-          font-weight: 700;
-        }
-
-        .logo-bracket {
-          color: var(--accent-primary);
-          opacity: 0.8;
-        }
-
-        .logo-text {
-          background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .logo-underline {
-          height: 2px;
-          background: rgba(255, 255, 255, 0.1);
-          margin-top: 0.5rem;
-          border-radius: 1px;
-        }
-
-        .logo-line {
-          height: 100%;
-          background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-          border-radius: 1px;
-        }
-
-        .brand-tagline {
-          text-align: center;
-          font-size: 0.75rem;
-          color: var(--text-muted);
-          margin-top: 0.75rem;
-          letter-spacing: 2px;
-          text-transform: uppercase;
         }
 
         .sidebar-nav {
@@ -288,44 +207,45 @@ const Sidebar = ({ language = "en" }) => {
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.25rem;
         }
 
         .nav-item {
           display: flex;
           align-items: center;
           gap: 0.875rem;
-          padding: 0.875rem 1rem;
+          padding: 0.75rem 1rem;
           color: var(--text-muted);
           text-decoration: none;
-          border-radius: 8px;
+          border-radius: 6px;
           transition: all 0.2s ease;
           position: relative;
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           font-weight: 500;
+          cursor: pointer;
         }
 
         .nav-item:hover {
           color: var(--text-main);
-          background: rgba(255, 255, 255, 0.03);
+          background: var(--bg-subtle);
         }
 
         .nav-item.active {
           color: var(--accent-primary);
-          background: rgba(0, 255, 204, 0.08);
+          background: var(--bg-subtle);
         }
 
         .nav-icon-wrapper {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 24px;
-          height: 24px;
+          width: 20px;
+          height: 20px;
         }
 
         .nav-icon-wrapper svg {
-          width: 20px;
-          height: 20px;
+          width: 18px;
+          height: 18px;
         }
 
         .active-indicator {
@@ -349,56 +269,75 @@ const Sidebar = ({ language = "en" }) => {
 
         .submenu {
           list-style: none;
-          margin-left: 1rem;
-          padding-left: 1rem;
-          border-left: 1px solid var(--glass-border);
-          overflow: hidden;
+          margin-top: 0.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
         }
 
         .submenu-header {
           display: block;
-          padding: 0.6rem 0.75rem;
-          color: var(--accent-secondary);
-          font-size: 0.8rem;
+          padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+          color: var(--text-header);
+          font-size: 0.85rem;
           font-weight: 600;
           text-decoration: none;
-          text-transform: uppercase;
-          letter-spacing: 1px;
           border-radius: 6px;
           transition: all 0.2s;
+          position: relative;
+        }
+        
+        .submenu-header::before {
+             content: '';
+             position: absolute;
+             left: 1.25rem;
+             top: 50%;
+             transform: translateY(-50%);
+             width: 4px;
+             height: 4px;
+             border-radius: 50%;
+             background: var(--text-muted);
         }
 
         .submenu-header:hover {
-          background: rgba(255, 0, 255, 0.05);
+          background: var(--bg-subtle);
+          color: var(--accent-primary);
         }
 
         .submenu-item {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          padding: 0.6rem 0.75rem;
+          padding: 0.5rem 0.75rem 0.5rem 2.5rem;
           color: var(--text-muted);
           font-size: 0.85rem;
           text-decoration: none;
           border-radius: 6px;
           transition: all 0.2s;
+          position: relative;
+          border-left: 2px solid transparent;
+          margin-left: 0.5rem;
+        }
+        
+        .submenu-item::before {
+             content: '';
+             position: absolute;
+             left: 0;
+             top: 0;
+             bottom: 0;
+             width: 1px;
+             background: var(--glass-border);
         }
 
         .submenu-item:hover {
           color: var(--text-main);
-          background: rgba(255, 255, 255, 0.03);
-          padding-left: 1rem;
+          background: var(--bg-subtle);
         }
 
         .submenu-item.active {
           color: var(--accent-primary);
-          background: rgba(0, 255, 204, 0.05);
-        }
-
-        .submenu-dot {
-          color: var(--accent-primary);
-          font-size: 1.2rem;
-          line-height: 0;
+          background: var(--bg-subtle);
+          font-weight: 500;
+          border-left-color: var(--accent-primary);
         }
 
         .sidebar-footer {
@@ -410,7 +349,7 @@ const Sidebar = ({ language = "en" }) => {
         .social-links {
           display: flex;
           justify-content: center;
-          gap: 1rem;
+          gap: 0.75rem;
           margin-bottom: 1rem;
         }
 
@@ -418,10 +357,10 @@ const Sidebar = ({ language = "en" }) => {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-          background: rgba(255, 255, 255, 0.03);
+          width: 36px;
+          height: 36px;
+          border-radius: 6px;
+          background: var(--bg-subtle);
           border: 1px solid var(--glass-border);
           color: var(--text-muted);
           transition: all 0.2s;
@@ -430,8 +369,7 @@ const Sidebar = ({ language = "en" }) => {
         .social-icon:hover {
           color: var(--accent-primary);
           border-color: var(--accent-primary);
-          background: rgba(0, 255, 204, 0.08);
-          box-shadow: 0 4px 12px rgba(0, 255, 204, 0.15);
+          background: var(--bg-core);
         }
 
         .social-icon svg {
@@ -446,7 +384,36 @@ const Sidebar = ({ language = "en" }) => {
           opacity: 0.6;
         }
 
+        .hamburger-btn {
+          display: none;
+          position: fixed;
+          top: 1rem;
+          left: 1rem;
+          z-index: 1001;
+          width: 40px;
+          height: 40px;
+          background: var(--bg-card);
+          border: 1px solid var(--glass-border);
+          border-radius: 6px;
+          color: var(--text-main);
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .mobile-overlay {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 999;
+        }
+
         @media (max-width: 1024px) {
+          .hamburger-btn {
+            display: flex;
+          }
+
           .sidebar {
             position: fixed;
             transform: translateX(-100%);
@@ -455,6 +422,10 @@ const Sidebar = ({ language = "en" }) => {
 
           .sidebar.mobile-open {
             transform: translateX(0);
+          }
+
+          .mobile-overlay {
+            display: block;
           }
         }
       `}</style>

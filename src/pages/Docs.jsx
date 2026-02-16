@@ -1,155 +1,155 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import * as Icons from "../components/Icons";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ChevronRight, Book, Code, Zap, Shield } from 'lucide-react';
+import DocsNavigation from '../components/DocsNavigation';
 
 const Docs = () => {
+  const features = [
+    {
+      icon: <Book size={24} />,
+      title: 'Comprehensive Guides',
+      description: 'Step-by-step tutorials for every feature',
+    },
+    {
+      icon: <Code size={24} />,
+      title: 'API Reference',
+      description: 'Detailed documentation for developers',
+    },
+    {
+      icon: <Zap size={24} />,
+      title: 'Quick Start',
+      description: 'Get up and running in minutes',
+    },
+    {
+      icon: <Shield size={24} />,
+      title: 'Best Practices',
+      description: 'Learn recommended patterns',
+    },
+  ];
+
+  const docModules = [
+    { path: '/docs/invite', label: 'InviteManager', desc: 'Discord invite tracking and management' },
+    { path: '/docs/template', label: 'TemplateBot', desc: 'Pre-built bot templates' },
+    { path: '/docs/multipurpose', label: 'MultipurposeBot', desc: 'All-in-one Discord bot' },
+  ];
+
   return (
-    <div className="page-wrapper fade-in">
-      <header className="page-header">
-        <h1>Documentation Hub</h1>
-        <p>Comprehensive guides for all my Discord bot projects</p>
-      </header>
+    <div className="page-wrapper">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <header className="page-header">
+          <h1>Documentation</h1>
+          <p>Welcome to the documentation. Here you will find everything you need to build amazing Discord bots.</p>
+        </header>
 
-      <div className="bio-clean-container">
-        <h3 style={{ marginBottom: "1rem", color: "var(--accent-primary)" }}>About My Projects</h3>
-        <p style={{ color: "var(--text-muted)", marginBottom: "2rem" }}>
-          I specialize in building scalable, production-ready Discord bots using Discord.js v14. 
-          Each project is designed with modularity, clean code architecture, and comprehensive documentation 
-          to help developers learn and implement features quickly.
-        </p>
-      </div>
-
-      
-      <div className="docs-grid">
-        
-        <Link to="/docs/invite" className="doc-card glass-card">
-          <div className="doc-card-header">
-            <div className="doc-icon" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" }}>
-              <Icons.User />
-            </div>
-            <div>
-              <h3>Invite Manager Bot</h3>
-              <span className="doc-badge">Discord.js v14</span>
-            </div>
-          </div>
-          <p className="doc-description">
-            Advanced invite tracking system with welcome/leave messages, invite roles, 
-            and giveaway integration. Tracks who invited whom with accurate cache management.
-          </p>
-          <div className="doc-features">
-            <span className="feature-tag">Invite Tracking</span>
-            <span className="feature-tag">Welcome System</span>
-            <span className="feature-tag">Giveaways</span>
-            <span className="feature-tag">Auto Roles</span>
-          </div>
-          <div className="doc-link-arrow">
-            View Documentation <Icons.ChevronRight />
-          </div>
-        </Link>
-
-        
-        <Link to="/docs/template" className="doc-card glass-card">
-          <div className="doc-card-header">
-            <div className="doc-icon" style={{ background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)" }}>
-              <Icons.Book />
-            </div>
-            <div>
-              <h3>Template Bot</h3>
-              <span className="doc-badge">Beginner Friendly</span>
-            </div>
-          </div>
-          <p className="doc-description">
-            Clean and simple Discord bot template designed for easy deployment and learning. 
-            Perfect starting point for beginners with modular command structure.
-          </p>
-          <div className="doc-features">
-            <span className="feature-tag">Slash Commands</span>
-            <span className="feature-tag">Event Handler</span>
-            <span className="feature-tag">MongoDB Ready</span>
-            <span className="feature-tag">MIT License</span>
-          </div>
-          <div className="doc-link-arrow">
-            View Documentation <Icons.ChevronRight />
-          </div>
-        </Link>
-
-        
-        <Link to="/docs/multipurpose" className="doc-card glass-card">
-          <div className="doc-card-header">
-            <div className="doc-icon" style={{ background: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)" }}>
-              <Icons.Stack />
-            </div>
-            <div>
-              <h3>Multipurpose Bot</h3>
-              <span className="doc-badge">Feature Rich</span>
-            </div>
-          </div>
-          <p className="doc-description">
-            All-in-one Discord bot with moderation, utility, fun commands, music player (DisTube), 
-            reaction roles, and customizable welcome/leave messages.
-          </p>
-          <div className="doc-features">
-            <span className="feature-tag">Moderation</span>
-            <span className="feature-tag">Music Player</span>
-            <span className="feature-tag">Reaction Roles</span>
-            <span className="feature-tag">Admin Panel</span>
-          </div>
-          <div className="doc-link-arrow">
-            View Documentation <Icons.ChevronRight />
-          </div>
-        </Link>
-      </div>
-
-      
-      <div className="docs-quickstart glass-panel">
-        <h3>Quick Start Guide</h3>
-        <div className="quickstart-steps">
-          <div className="step-item">
-            <div className="step-number">1</div>
-            <div>
-              <h4>Choose Your Project</h4>
-              <p>Select the bot documentation that matches your needs</p>
-            </div>
-          </div>
-          <div className="step-item">
-            <div className="step-number">2</div>
-            <div>
-              <h4>Follow Setup Instructions</h4>
-              <p>Each guide includes detailed installation and configuration steps</p>
-            </div>
-          </div>
-          <div className="step-item">
-            <div className="step-number">3</div>
-            <div>
-              <h4>Deploy & Customize</h4>
-              <p>Run your bot and modify features to fit your server's requirements</p>
-            </div>
-          </div>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '1rem',
+          marginBottom: '3rem',
+        }}>
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="glass-card"
+              style={{ padding: '1.5rem' }}
+            >
+              <div style={{ color: 'var(--accent-primary)', marginBottom: '0.75rem' }}>
+                {feature.icon}
+              </div>
+              <h3 style={{
+                fontSize: '1rem',
+                fontWeight: '600',
+                color: 'var(--text-header)',
+                marginBottom: '0.5rem',
+              }}>
+                {feature.title}
+              </h3>
+              <p style={{
+                fontSize: '0.875rem',
+                color: 'var(--text-muted)',
+                margin: 0,
+              }}>
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
-      </div>
 
-      
-      <div className="tech-stack-section">
-        <h3>Technologies Used</h3>
-        <div className="tech-grid">
-          <div className="tech-item">
-            <span className="tech-icon">⚛️</span>
-            <span>Discord.js v14</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-icon">🍃</span>
-            <span>MongoDB</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-icon">🎵</span>
-            <span>DisTube</span>
-          </div>
-          <div className="tech-item">
-            <span className="tech-icon">📦</span>
-            <span>Node.js</span>
-          </div>
+        <h2 style={{
+          fontSize: '1.5rem',
+          fontWeight: '600',
+          marginBottom: '1rem',
+          color: 'var(--text-header)',
+        }}>
+          Modules
+        </h2>
+
+        <div style={{
+          display: 'grid',
+          gap: '1rem',
+          marginBottom: '2rem',
+        }}>
+          {docModules.map((module, index) => (
+            <Link
+              key={index}
+              to={module.path}
+              className="glass-card"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '1.25rem',
+                textDecoration: 'none',
+              }}
+            >
+              <div>
+                <h3 style={{
+                  fontSize: '1rem',
+                  fontWeight: '600',
+                  color: 'var(--text-header)',
+                  marginBottom: '0.25rem',
+                }}>
+                  {module.label}
+                </h3>
+                <p style={{
+                  fontSize: '0.875rem',
+                  color: 'var(--text-muted)',
+                  margin: 0,
+                }}>
+                  {module.desc}
+                </p>
+              </div>
+              <ChevronRight size={20} style={{ color: 'var(--text-muted)' }} />
+            </Link>
+          ))}
         </div>
-      </div>
+
+        <div style={{
+          padding: '1.25rem',
+          background: 'var(--bg-subtle)',
+          border: '1px solid var(--glass-border)',
+          borderRadius: '8px',
+        }}>
+          <p style={{
+            margin: 0,
+            fontSize: '0.875rem',
+            color: 'var(--text-muted)',
+          }}>
+            <strong style={{ color: 'var(--text-header)' }}>Need help?</strong>{' '}
+            Join our community Discord server for support and discussions.
+          </p>
+        </div>
+
+        <DocsNavigation currentPath="/docs" />
+      </motion.div>
     </div>
   );
 };

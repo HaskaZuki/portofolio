@@ -22,3 +22,4 @@ node_modules/
 .parcel-cache
 
 .DS_Store
+.agent/

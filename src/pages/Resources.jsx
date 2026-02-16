@@ -1,7 +1,7 @@
 import React from "react";
 import * as Icons from "../components/Icons";
 
-const Resources = () => (
+const Resources = ({ language = 'en' }) => (
   <div className="page-wrapper fade-in">
     <header className="page-header">
       <h1>Resources & Credits</h1>
@@ -20,16 +20,16 @@ const Resources = () => (
       <div className="resource-card glass-card">
         <h3><Icons.Stack /> Core Tech</h3>
         <div className="link-list">
-          <a href="https://nodejs.org/" target="_blank" className="resource-link">
+          <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Node.js</strong> <span>Runtime environment</span>
           </a>
-          <a href="https://react.dev/" target="_blank" className="resource-link">
+          <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>React.js</strong> <span>Frontend library</span>
           </a>
-          <a href="https://parceljs.org/" target="_blank" className="resource-link">
+          <a href="https://parceljs.org/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Parcel</strong> <span>Zero config bundler</span>
           </a>
-          <a href="https://discord.js.org/" target="_blank" className="resource-link">
+          <a href="https://discord.js.org/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Discord.js</strong> <span>API interaction</span>
           </a>
         </div>
@@ -38,28 +38,28 @@ const Resources = () => (
       <div className="resource-card glass-card">
         <h3><Icons.Book /> References</h3>
         <div className="link-list">
-          <a href="https://discordjs.guide/" target="_blank" className="resource-link">
+          <a href="https://discordjs.guide/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Discord.js Guide</strong> <span>Official Guide</span>
           </a>
-          <a href="https://react.dev/" target="_blank" className="resource-link">
+          <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>React Docs</strong> <span>Framework Docs</span>
           </a>
-          <a href="https://developer.mozilla.org/" target="_blank" className="resource-link">
+          <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>MDN Web Docs</strong> <span>Web Standards</span>
           </a>
         </div>
       </div>
 
       <div className="resource-card glass-card">
-        <h3><Icons.Repo /> Assets</h3>
+        <h3><Icons.GitHub /> Assets</h3>
         <div className="link-list">
-          <a href="https://lucide.dev/" target="_blank" className="resource-link">
+          <a href="https://lucide.dev/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Lucide React</strong> <span>Icon pack</span>
           </a>
-          <a href="https://fonts.google.com/" target="_blank" className="resource-link">
+          <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Google Fonts</strong> <span>JetBrains Mono</span>
           </a>
-          <a href="https://unsplash.com/" target="_blank" className="resource-link">
+          <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer" className="resource-link">
             <strong>Unsplash</strong> <span>Placeholder images</span>
           </a>
         </div>
@@ -76,9 +76,8 @@ const Resources = () => (
       .resource-card h3 {
         display: flex; align-items: center; gap: 0.8rem;
         color: var(--accent-primary);
-        font-family: var(--font-mono);
         margin-bottom: 1.5rem;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
       }
       
       .link-list {
@@ -89,25 +88,27 @@ const Resources = () => (
         text-decoration: none;
         padding: 0.8rem;
         border: 1px solid var(--glass-border);
-        background: rgba(255,255,255,0.02);
+        background: var(--bg-subtle);
         transition: all 0.2s;
+        border-radius: 6px;
       }
       .resource-link:hover {
         border-color: var(--accent-primary);
-        background: rgba(0, 240, 255, 0.05);
+        background: var(--bg-core);
         transform: translateX(5px);
       }
-      .resource-link strong { color: var(--text-header); font-family: var(--font-mono); font-size: 0.95rem; }
+      .resource-link strong { color: var(--text-header); font-size: 0.95rem; }
       .resource-link span { color: var(--text-muted); font-size: 0.85rem; }
 
       .card-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
       .tags-container { display: flex; flex-wrap: wrap; gap: 0.8rem; }
       .tech-tag {
-        background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+        background: var(--bg-subtle); border: 1px solid var(--glass-border);
         color: var(--text-main); padding: 0.4rem 0.8rem; font-size: 0.85rem; text-decoration: none;
         transition: all 0.2s;
+        border-radius: 4px;
       }
-      .tech-tag:hover { border-color: var(--accent-secondary); color: var(--accent-secondary); }
+      .tech-tag:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
     `}</style>
   </div>
 );

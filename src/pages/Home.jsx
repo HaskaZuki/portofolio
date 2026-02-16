@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { t } from "../i18n/translations";
-import BlogSection from "../components/BlogSection";
-import { MagneticButton } from "../components/TiltCard";
+import BlogSection from "../components/features/blog/BlogSection";
 
 const Home = ({ language = "en" }) => {
   const containerVariants = {
@@ -40,7 +39,7 @@ const Home = ({ language = "en" }) => {
         >
           <motion.p className="intro-text" variants={itemVariants}>
             <span className="status-indicator">●</span>
-            System Online. Welcome, I'm <span className="highlight-text">Haska</span>
+            Welcome, I am <span className="highlight-text">Haska</span>
           </motion.p>
           
           <motion.h1 className="main-headline" variants={itemVariants}>
@@ -69,12 +68,12 @@ const Home = ({ language = "en" }) => {
           </motion.p>
           
           <motion.div className="cta-group" variants={itemVariants}>
-            <MagneticButton className="btn btn-primary">
-              <Link to="/about" className="btn-link">{t(language, "viewProjects")}</Link>
-            </MagneticButton>
-            <MagneticButton className="btn btn-secondary">
-              <Link to="/docs" className="btn-link">{t(language, "viewDocs")}</Link>
-            </MagneticButton>
+            <Link to="/about" className="btn btn-primary">
+              {t(language, "viewProjects")}
+            </Link>
+            <Link to="/docs" className="btn btn-secondary">
+              {t(language, "viewDocs")}
+            </Link>
           </motion.div>
 
           <motion.div className="hero-stats" variants={itemVariants}>
@@ -94,43 +93,9 @@ const Home = ({ language = "en" }) => {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Animated Background Elements */}
-        <div className="hero-bg-effects">
-          <motion.div 
-            className="glow-orb orb-1"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div 
-            className="glow-orb orb-2"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-          />
-        </div>
       </section>
 
-      {/* Blog Section */}
       <section className="home-blog-section">
-        <div className="section-header">
-          <h2>Latest Articles</h2>
-          <p>Thoughts, tutorials, and insights</p>
-        </div>
         <BlogSection />
       </section>
 
@@ -142,6 +107,7 @@ const Home = ({ language = "en" }) => {
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          padding-bottom: 12vh; /* Lift content visually */
         }
 
         .content-container {
@@ -168,6 +134,7 @@ const Home = ({ language = "en" }) => {
           font-weight: 800;
           line-height: 1.2;
           margin-bottom: 1.5rem;
+          color: var(--text-header);
         }
 
         .headline-line {
@@ -182,6 +149,17 @@ const Home = ({ language = "en" }) => {
           color: var(--accent-primary);
           font-weight: 100;
           margin-left: 2px;
+        }
+
+        .intro-text {
+          font-size: 1rem;
+          color: var(--text-muted);
+          margin-bottom: 1rem;
+        }
+
+        .highlight-text {
+          color: var(--accent-primary);
+          font-weight: 600;
         }
 
         .hero-subtitle {
@@ -199,12 +177,38 @@ const Home = ({ language = "en" }) => {
           margin-top: 2.5rem;
         }
 
-        .btn-link {
-          color: inherit;
-          text-decoration: none;
-          display: flex;
+        .btn {
+          display: inline-flex;
           align-items: center;
           gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 6px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          text-decoration: none;
+          transition: all 0.2s;
+          cursor: pointer;
+          border: none;
+        }
+
+        .btn-primary {
+          background: var(--accent-primary);
+          color: white;
+        }
+
+        .btn-primary:hover {
+          background: var(--accent-secondary);
+        }
+
+        .btn-secondary {
+          background: var(--bg-subtle);
+          color: var(--text-main);
+          border: 1px solid var(--glass-border);
+        }
+
+        .btn-secondary:hover {
+          border-color: var(--accent-primary);
+          color: var(--accent-primary);
         }
 
         .hero-stats {
@@ -244,70 +248,20 @@ const Home = ({ language = "en" }) => {
           background: var(--glass-border);
         }
 
-        .hero-bg-effects {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          z-index: 0;
-        }
-
-        .glow-orb {
-          position: absolute;
-          border-radius: 50%;
-          filter: blur(80px);
-        }
-
-        .orb-1 {
-          width: 400px;
-          height: 400px;
-          background: var(--accent-primary);
-          top: 10%;
-          right: 10%;
-          opacity: 0.1;
-        }
-
-        .orb-2 {
-          width: 300px;
-          height: 300px;
-          background: var(--accent-secondary);
-          bottom: 20%;
-          left: 10%;
-          opacity: 0.08;
-        }
-
         .home-blog-section {
           margin-top: 0;
-          padding: 4rem 2rem;
+          padding: 0 2rem;
         }
 
-        .home-blog-section .section-header {
-          text-align: center;
-          margin-bottom: 3rem;
-        }
 
-        .home-blog-section .section-header h2 {
-          font-size: 2rem;
-          color: var(--text-header);
-          margin-bottom: 0.5rem;
-        }
-
-        .home-blog-section .section-header p {
-          color: var(--text-muted);
-        }
 
         @media (max-width: 768px) {
           .main-headline {
-            font-size: 2.2rem !important;
+            font-size: 2.2rem;
           }
 
-          .hero-stats {
-            flex-direction: column;
-            gap: 1.5rem;
-          }
-
-          .stat-divider {
-            width: 60px;
-            height: 1px;
+          .hero-subtitle {
+            font-size: 1rem;
           }
 
           .cta-group {
@@ -315,18 +269,14 @@ const Home = ({ language = "en" }) => {
             align-items: center;
           }
 
-          .glow-orb {
-            filter: blur(60px);
+          .hero-stats {
+            flex-direction: column;
+            gap: 1rem;
           }
 
-          .orb-1 {
-            width: 250px;
-            height: 250px;
-          }
-
-          .orb-2 {
-            width: 200px;
-            height: 200px;
+          .stat-divider {
+            width: 40px;
+            height: 1px;
           }
         }
       `}</style>

@@ -1,11 +1,9 @@
 import React from "react";
 import SkillsSection from "../components/SkillsSection";
-import Timeline from "../components/Timeline";
-import GitHubStats from "../components/GitHubStats";
+import GitHubStats from "../components/features/github/GitHubStats";
 import { SlideUp, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
-import TiltCard from "../components/TiltCard";
 
-const About = () => {
+const About = ({ language = 'en' }) => {
   const stacks = [
     { category: "Language Core", items: ["Python", "JavaScript", "Luau", "SQL"] },
     { category: "Backend Systems", items: ["Node.js", "Discord.js", "MongoDB", "Redis"] },
@@ -16,18 +14,18 @@ const About = () => {
     <div className="page-wrapper">
       <SlideUp>
         <header className="page-header">
-          <h1>About & Architecture</h1>
+          <h1>About</h1>
           <p>The logic behind the systems.</p>
         </header>
       </SlideUp>
 
       <SlideUp delay={0.1}>
         <div className="about-grid">
-          <TiltCard className="bio-section-wrapper">
+          <div className="bio-section-wrapper">
             <div className="about-card glass-card bio-section">
               <h3>The Developer Behind The Code</h3>
               <p>
-                I'm a <strong>self-taught developer</strong> with a passion for building scalable, 
+                I am a <strong>self-taught developer</strong> with a passion for building scalable, 
                 production-ready applications. My journey started with a curiosity about how things work, 
                 which led me from mechanical engineering concepts to software architecture.
               </p>
@@ -37,7 +35,7 @@ const About = () => {
                 efficient database design, and user-centric interfaces.
               </p>
               <p style={{ marginTop: '1rem' }}>
-                When I'm not coding, you'll find me exploring new technologies, contributing to open source, 
+                When I am not coding, you will find me exploring new technologies, contributing to open source, 
                 or optimizing my development workflow. I believe in <strong>continuous learning</strong> and 
                 the power of community-driven development.
               </p>
@@ -51,26 +49,24 @@ const About = () => {
                   <span className="fact-label">Projects Built</span>
                 </div>
                 <div className="fact">
-                  <span className="fact-number">10K+</span>
+                  <span className="fact-number">1M+</span>
                   <span className="fact-label">Bot Users</span>
                 </div>
               </div>
             </div>
-          </TiltCard>
+          </div>
 
           <StaggerContainer className="stacks-grid" staggerDelay={0.1}>
             {stacks.map((stack, index) => (
               <StaggerItem key={index}>
-                <TiltCard tiltAmount={5}>
-                  <div className="about-card glass-card">
-                    <h3>{stack.category}</h3>
-                    <div className="tags-container">
-                      {stack.items.map((item, idx) => (
-                        <span key={idx} className="tech-tag">{item}</span>
-                      ))}
-                    </div>
+                <div className="about-card glass-card">
+                  <h3>{stack.category}</h3>
+                  <div className="tags-container">
+                    {stack.items.map((item, idx) => (
+                      <span key={idx} className="tech-tag">{item}</span>
+                    ))}
                   </div>
-                </TiltCard>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -83,15 +79,8 @@ const About = () => {
           <p>Technologies I work with daily</p>
         </div>
       </SlideUp>
-      <SkillsSection />
+      <SkillsSection language={language} />
 
-      <SlideUp delay={0.1}>
-        <div className="section-header">
-          <h2>Experience & Journey</h2>
-          <p>My professional path and milestones</p>
-        </div>
-      </SlideUp>
-      <Timeline />
 
       <SlideUp delay={0.1}>
         <div className="section-header">
@@ -118,9 +107,9 @@ const About = () => {
         .about-card h3 {
           color: var(--accent-primary);
           margin-bottom: 1.5rem;
-          font-family: var(--font-mono);
           text-transform: uppercase;
           letter-spacing: 1px;
+          font-size: 0.9rem;
         }
         .about-card p {
           color: var(--text-muted);
@@ -154,16 +143,17 @@ const About = () => {
           display: flex; flex-wrap: wrap; gap: 0.8rem;
         }
         .tech-tag {
-          background: rgba(255,255,255,0.05);
+          background: var(--bg-subtle);
           border: 1px solid var(--glass-border);
           padding: 0.4rem 0.8rem;
           font-size: 0.85rem;
           color: var(--text-main);
           transition: all 0.2s;
+          border-radius: 4px;
         }
         .tech-tag:hover {
-          border-color: var(--accent-secondary);
-          color: var(--accent-secondary);
+          border-color: var(--accent-primary);
+          color: var(--accent-primary);
           transform: translateY(-2px);
         }
 
